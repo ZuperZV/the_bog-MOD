@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.zuperz.the_bog.worldgen.biome.ModBiomes;
 import net.zuperz.the_bog.worldgen.dimension.ModDimensions;
 
 import java.util.Set;
@@ -21,6 +22,7 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
 
+            .add(Registries.BIOME, ModBiomes::boostrap)
             .add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem)
             .add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType);
 
