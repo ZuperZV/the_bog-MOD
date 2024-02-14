@@ -1,7 +1,6 @@
 package net.zuperz.the_bog.worldgen;
 
-import net.ZuperZV.Tool_Forge.Tool_Forge;
-import net.ZuperZV.Tool_Forge.block.ModBlocks;
+import net.zuperz.the_bog.The_Bog;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -21,30 +20,21 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BISMUTH_ORE_KEY = registerKey("bismuth_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> END_BISMUTH_ORE_KEY = registerKey("end_bismuth_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> END_LILLIUM_ORE_KEY = registerKey("end_lillium_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceabeles = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplaceabeles = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest endReplaceabeles = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState> overworldAlexandriteOres = List.of(OreConfiguration.target(stoneReplaceabeles,
+        /*List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(OreConfiguration.target(stoneReplaceabeles,
                         ModBlocks.BISMUTH_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEPPSLATE_BISMUTH_ORE.get().defaultBlockState()));
 
-
-        register(context, OVERWORLD_BISMUTH_ORE_KEY, Feature.ORE, new OreConfiguration(overworldAlexandriteOres, 7));
-        register(context, END_BISMUTH_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceabeles,
-                ModBlocks.BISMUTH_ENDSTONE_ORE.get().defaultBlockState(), 6));
-        register(context, END_LILLIUM_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceabeles,
-                ModBlocks.LILLIUM_ORE.get().defaultBlockState(), 4));
-
+        register(context, OVERWORLD_BISMUTH_ORE_KEY, Feature.ORE, new OreConfiguration(overworldBismuthOres, 7));
+         */
 
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Tool_Forge.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(The_Bog.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
