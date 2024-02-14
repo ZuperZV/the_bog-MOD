@@ -1,9 +1,9 @@
 package net.zuperz.the_bog.datagen;
 
-import net.ZuperZV.Tool_Forge.Tool_Forge;
-import net.ZuperZV.Tool_Forge.worldgen.ModBiomeModifiers;
-import net.ZuperZV.Tool_Forge.worldgen.ModConfiguredFeatures;
-import net.ZuperZV.Tool_Forge.worldgen.ModPlacedFeatures;
+import net.zuperz.the_bog.The_Bog;
+import net.zuperz.the_bog.worldgen.ModBiomeModifiers;
+import net.zuperz.the_bog.worldgen.ModConfiguredFeatures;
+import net.zuperz.the_bog.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -21,6 +21,6 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, BUILDER, Set.of(Tool_Forge.MOD_ID));
+        super(output, registries, BUILDER, Set.of(The_Bog.MOD_ID));
     }
 }
