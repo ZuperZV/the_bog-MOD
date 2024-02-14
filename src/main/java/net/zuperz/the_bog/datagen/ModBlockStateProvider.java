@@ -10,6 +10,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.zuperz.the_bog.block.ModBlocks;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -18,14 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        /*blockWithItem(ModBlocks.GILDED_GOLD_BLOCK);
-
-
-        stairsBlock((StairBlock) ModBlocks.SOUL_STONE_STAIRS.get(), blockTexture(ModBlocks.SOUL_STONE.get()));
-
-
-        slabBlock(((SlabBlock) ModBlocks.SOUL_STONE_SLAB.get()), blockTexture(ModBlocks.SOUL_STONE.get()), blockTexture(ModBlocks.SOUL_STONE.get()));
-         */
+        blockWithItem(ModBlocks.THE_BOG_PORTAL);
 
     }
 

@@ -12,6 +12,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.versions.forge.ForgeVersion;
+import net.zuperz.the_bog.block.ModBlocks;
+import net.zuperz.the_bog.item.ModItems;
 import net.zuperz.the_bog.worldgen.biome.surface.ModSurfaceRules;
 import org.slf4j.Logger;
 
@@ -24,6 +26,9 @@ public class The_Bog {
 
     public The_Bog() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
