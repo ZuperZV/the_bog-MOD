@@ -24,17 +24,14 @@ public class boggy_keystone extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if(context.getPlayer() != null) {
-            if(context.getPlayer().level().dimension() == ModDimensions.THE_BOG_LEVEL_KEY
-                    || context.getPlayer().level().dimension() == Level.OVERWORLD) {
-                for(Direction direction : Direction.Plane.VERTICAL) {
+        if (context.getPlayer() != null) {
+            if (context.getPlayer().level().dimension() == ModDimensions.THE_BOG_LEVEL_KEY || context.getPlayer().level().dimension() == Level.OVERWORLD) {
+                for (Direction direction : Direction.Plane.VERTICAL) {
                     BlockPos framePos = context.getClickedPos().relative(direction);
-                    if(((MudStoneBlock) ModBlocks.THE_BOG_PORTAL.get()).trySpawnPortal(context.getLevel(), framePos)) {
-                        context.getLevel().playSound(context.getPlayer(), framePos,
-                                SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    if (((MudStoneBlock) ModBlocks.MUD_STONE.get()).trySpawnPortal(context.getLevel(), framePos)) {
+                        //context.getLevel().playSound(context.getPlayer(), framePos, UGSoundEvents.UNDERGARDEN_PORTAL_ACTIVATE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
                         return InteractionResult.CONSUME;
-                    }
-                    else return InteractionResult.FAIL;
+                    } else return InteractionResult.FAIL;
                 }
             }
         }
