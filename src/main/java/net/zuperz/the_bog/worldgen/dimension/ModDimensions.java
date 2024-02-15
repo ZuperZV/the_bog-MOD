@@ -36,7 +36,7 @@ public class ModDimensions {
                 true, // hasCeiling
                 false, // ultraWarm
                 true, // natural
-                0.5, // coordinateScale
+                1.0, // coordinateScale
                 true, // bedWorks
                 false, // respawnAnchorWorks
                 0, // minY
@@ -55,7 +55,7 @@ public class ModDimensions {
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.TEST_BIOME)),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
@@ -65,7 +65,7 @@ public class ModDimensions {
                                 Pair.of(Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN)),
                                 Pair.of(Climate.parameters(0.4F, 0.3F, 0.2F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.DARK_FOREST))
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.THE_BOG_TYPE), noiseBasedChunkGenerator);
 

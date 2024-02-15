@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=z": { "model": "the_bog:block/the_bog_portal_ew" },
+    "axis=x": { "model": "the_bog:block/the_bog_portal_ns" }
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.The_Bog;
+import net.zuperz.the_bog.block.custom.MudStoneBlock;
 import net.zuperz.the_bog.block.custom.TheBogPortal;
 import net.zuperz.the_bog.item.ModItems;
 
@@ -21,6 +22,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> THE_BOG_PORTAL = registerBlock("the_bog_portal",
             () -> new TheBogPortal(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion().noLootTable()));
+
+    public static final RegistryObject<Block> MUD_STONE = registerBlock("mud_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion().noLootTable()));
+
+    public static final RegistryObject<Block> BOG_PORTAL = registerBlock("bog_portal",
+            MudStoneBlock::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
