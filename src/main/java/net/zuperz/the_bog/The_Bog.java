@@ -1,6 +1,8 @@
 package net.zuperz.the_bog;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,6 +15,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.versions.forge.ForgeVersion;
 import net.zuperz.the_bog.block.ModBlocks;
+import net.zuperz.the_bog.entity.ModEntities;
+import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.item.ModItems;
 import net.zuperz.the_bog.pois.ModPOIs;
 import net.zuperz.the_bog.worldgen.biome.surface.ModSurfaceRules;
@@ -22,8 +26,7 @@ import org.slf4j.Logger;
 @Mod(The_Bog.MOD_ID)
 public class The_Bog {
     public static final String MOD_ID = "the_bog";
-
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public The_Bog() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -32,6 +35,7 @@ public class The_Bog {
         ModBlocks.register(modEventBus);
 
         ModPOIs.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -41,6 +45,7 @@ public class The_Bog {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
         });
     }
 

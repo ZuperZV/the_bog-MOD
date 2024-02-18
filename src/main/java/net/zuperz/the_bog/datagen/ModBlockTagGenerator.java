@@ -37,6 +37,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.PORTAL_FRAME_BLOCKS)
                 .add(ModBlocks.MUD_STONE.get());
 
+        this.tag(ModTags.Blocks.BLACKLIST_PORTAL_FRAME_BLOCKS);
+
+        this.tag(ModTags.Blocks.BOG_DIRT)
+                .add(ModBlocks.MUD_STONE.get());
+
     }
 
     @Override

@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.zuperz.the_bog.worldgen.dimension.ModDimensions;
-import net.zuperz.the_bog.worldgen.portal.TheBogTeleporter;
+import net.zuperz.the_bog.worldgen.portal.ModTeleporter;
 
 public class TheBogPortal extends Block {
     public TheBogPortal(Properties pProperties) {
@@ -40,9 +40,9 @@ public class TheBogPortal extends Block {
             ServerLevel portalDimension = minecraftserver.getLevel(resourcekey);
             if (portalDimension != null && !player.isPassenger()) {
                 if(resourcekey == ModDimensions.THE_BOG_LEVEL_KEY) {
-                    player.changeDimension(portalDimension, new TheBogTeleporter(pPos, true));
+                    player.changeDimension(portalDimension, new ModTeleporter(pPos, true));
                 } else {
-                    player.changeDimension(portalDimension, new TheBogTeleporter(pPos, false));
+                    player.changeDimension(portalDimension, new ModTeleporter(pPos, false));
                 }
             }
         }
