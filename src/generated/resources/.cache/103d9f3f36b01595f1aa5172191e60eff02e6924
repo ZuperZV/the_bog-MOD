@@ -1,5 +1,5 @@
-// 1.20.1	2024-02-14T23:11:54.8347268	Registries
+// 1.20.1	2024-02-18T20:09:11.3562633	Registries
 a68ea98d648b089081af8d922df024f6f5a132c7 data/the_bog/dimension/the_bog.json
 0bb1c2413f3841ba0efc1417c9c30bf9bd5ab8d5 data/the_bog/dimension_type/the_bog_type.json
-a341ae6e00951e8f1f7943fdc9c60e20ab1b358e data/the_bog/worldgen/biome/test_biome.json
-a341ae6e00951e8f1f7943fdc9c60e20ab1b358e data/the_bog/worldgen/biome/test_biome_2.json
+749fe8cdf09923f49da6110c5975efa59e7944c3 data/the_bog/worldgen/biome/test_biome.json
+065d463ff38abb45d4327b6af277581ce486965a data/the_bog/worldgen/biome/test_biome_2.json

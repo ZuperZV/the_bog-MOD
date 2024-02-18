@@ -98,7 +98,7 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:wolf",
+        "type": "the_bog:duck",
         "maxCount": 4,
         "minCount": 4,
         "weight": 5

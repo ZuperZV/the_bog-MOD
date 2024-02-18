@@ -20,6 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(ModItems.DUCK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        simpleItem(ModItems.DUCK_FEATHER);
+        simpleItem(ModItems.DUCK_EGG);
     }
 
 

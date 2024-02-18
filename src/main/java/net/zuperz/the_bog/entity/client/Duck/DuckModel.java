@@ -19,7 +19,7 @@ public class DuckModel<T extends DuckEntity> extends HierarchicalModel<T> {
 
 	public DuckModel(ModelPart root) {
 		this.duck = root.getChild("duck");
-		this.head = root.getChild("duck");
+		this.head = duck.getChild("head");
 	}
 
 	public static LayerDefinition createBodyLayer() {
