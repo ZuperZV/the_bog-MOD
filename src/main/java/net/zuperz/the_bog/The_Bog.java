@@ -1,8 +1,11 @@
 package net.zuperz.the_bog;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,10 +18,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.versions.forge.ForgeVersion;
 import net.zuperz.the_bog.block.ModBlocks;
+import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
+import net.zuperz.the_bog.item.ModCreativeModeTabs;
 import net.zuperz.the_bog.item.ModItems;
 import net.zuperz.the_bog.pois.ModPOIs;
+import net.zuperz.the_bog.util.ModWoodTypes;
 import net.zuperz.the_bog.worldgen.biome.surface.ModSurfaceRules;
 import org.slf4j.Logger;
 
@@ -37,6 +43,9 @@ public class The_Bog {
         ModPOIs.register(modEventBus);
         ModEntities.register(modEventBus);
 
+        ModCreativeModeTabs.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -46,6 +55,8 @@ public class The_Bog {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MISTVEIL_BLOSSOM.getId(), ModBlocks.POTTED_MISTVEIL_BLOSSOM);
         });
     }
 
@@ -65,7 +76,7 @@ public class The_Bog {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
         }
     }
 }

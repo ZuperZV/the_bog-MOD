@@ -22,17 +22,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
 
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE);
-                //.add(ModBlocks.GILDED_GOLD_BLOCK.get())
-
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
-                //.add(ModBlocks.BISMUTH_ORE.get())
-
-        this.tag(BlockTags.NEEDS_IRON_TOOL);
-                //.add(ModBlocks.GILDED_GOLD_BLOCK.get());
-
-        this.tag(BlockTags.NEEDS_STONE_TOOL);
-                //.add(ModBlocks.TOOL_STATION.get())
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.WEEPING_WILLOW_SLAB.get())
+                .add(ModBlocks.WEEPING_WILLOW_STAIRS.get())
+                .add(ModBlocks.WEEPING_WILLOW_PLANKS.get())
+                .add(ModBlocks.WEEPING_WILLOW_LOG.get())
+                .add(ModBlocks.WEEPING_WILLOW_WOOD.get())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_LOG.get())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_WOOD.get())
+                .add(ModBlocks.WEEPING_WILLOW_PRESSURE_PLATE.get())
+                .add(ModBlocks.WEEPING_WILLOW_BUTTON.get())
+                .add(ModBlocks.WEEPING_WILLOW_FENCE.get())
+                .add(ModBlocks.WEEPING_WILLOW_FENCE_GATE.get());
 
         this.tag(ModTags.Blocks.PORTAL_FRAME_BLOCKS)
                 .add(ModBlocks.MUD_STONE.get());
@@ -41,6 +42,21 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(ModTags.Blocks.BOG_DIRT)
                 .add(ModBlocks.MUD_STONE.get());
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.WEEPING_WILLOW_LOG.get())
+                .add(ModBlocks.WEEPING_WILLOW_WOOD.get())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_LOG.get())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_WOOD.get());
+
+        this.tag(BlockTags.PLANKS)
+                .add(ModBlocks.WEEPING_WILLOW_PLANKS.get());
+
+        this.tag(BlockTags.FENCES)
+                .add(ModBlocks.WEEPING_WILLOW_FENCE.get());
+
+        this.tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.WEEPING_WILLOW_FENCE_GATE.get());
 
     }
 

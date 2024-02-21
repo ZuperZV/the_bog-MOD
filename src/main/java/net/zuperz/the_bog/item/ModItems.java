@@ -1,16 +1,16 @@
 package net.zuperz.the_bog.item;
 
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.The_Bog;
+import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.item.costom.DuckEggItem;
-import net.zuperz.the_bog.item.costom.ThrownDuckEgg;
+import net.zuperz.the_bog.item.costom.ModFoodProperties;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -26,6 +26,18 @@ public class ModItems {
 
     public static final RegistryObject<Item> DUCK_FEATHER = ITEMS.register("duck_feather",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_DUCK = ITEMS.register("raw_duck",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAW_DUCK)));
+
+    public static final RegistryObject<Item> WEEPING_WILLOW_SIGN = ITEMS.register("weeping_willow_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.WEEPING_WILLOW_SIGN.get(), ModBlocks.WEEPING_WILLOW_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> WEEPING_WILLOW_HANGING_SIGN = ITEMS.register("weeping_willow_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.WEEPING_WILLOW_HANGING_SIGN.get(), ModBlocks.WEEPING_WILLOW_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

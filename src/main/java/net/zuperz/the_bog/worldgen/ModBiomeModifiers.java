@@ -17,17 +17,19 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_BISMUTH_ORE = registerKey("add_bismuth_ore");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_WEEPING_WILLOW = registerKey("add_tree_weeping_willow");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        /*context.register(ADD_BISMUTH_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BISMUTH_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
+        /*context.register(ADD_TREE_WEEPING_WILLOW, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.WEEPING_WILLOW_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
          */
+
+
     }
     private static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(The_Bog.MOD_ID, name));

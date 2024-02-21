@@ -1,10 +1,13 @@
 package net.zuperz.the_bog.event;
 
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.zuperz.the_bog.The_Bog;
+import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckModel;
 import net.zuperz.the_bog.entity.custom.DuckEntity;
@@ -21,4 +24,9 @@ public class ModEventBusEvensts {
         event.put(ModEntities.DUCK.get(), DuckEntity.createAttributes().build());
     }
 
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
+    }
 }

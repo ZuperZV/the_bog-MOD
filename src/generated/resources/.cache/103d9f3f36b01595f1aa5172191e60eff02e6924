@@ -1,5 +1,11 @@
-// 1.20.1	2024-02-18T20:09:11.3562633	Registries
+// 1.20.1	2024-02-21T18:45:01.9699196	Registries
 a68ea98d648b089081af8d922df024f6f5a132c7 data/the_bog/dimension/the_bog.json
 0bb1c2413f3841ba0efc1417c9c30bf9bd5ab8d5 data/the_bog/dimension_type/the_bog_type.json
-749fe8cdf09923f49da6110c5975efa59e7944c3 data/the_bog/worldgen/biome/test_biome.json
-065d463ff38abb45d4327b6af277581ce486965a data/the_bog/worldgen/biome/test_biome_2.json
+e8405bf7bc30f2e8d34451e7036e88f8a277fa7f data/the_bog/worldgen/biome/test_biome.json
+330682727b0677e1272e7fd0de99300013543892 data/the_bog/worldgen/biome/test_biome_2.json
+26e79e1a97a1a43aeb1ab219315ebc44b06dd3bc data/the_bog/worldgen/configured_feature/bog_flower.json
+8ae4127cd94215a0fd643e52192f0b99865b0e4b data/the_bog/worldgen/configured_feature/bog_grass.json
+fff4482b207b96f8e4f0276279e5c673714231a9 data/the_bog/worldgen/configured_feature/weeping_willow_key.json
+ce74d17c94ef49c5a90b7fd076e4ad82ab42c098 data/the_bog/worldgen/placed_feature/bog_flower_placed.json
+9ef00907a7b4e1c77a50d43c88f136b198ed42aa data/the_bog/worldgen/placed_feature/bog_grass_placed.json
+6ae91d8edd7db0585a07d965c75472cdba0d809a data/the_bog/worldgen/placed_feature/weeping_willow_placed.json

@@ -1,18 +1,27 @@
 package net.zuperz.the_bog.item.costom;
 
+import net.minecraft.Util;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.custom.DuckEntity;
+import net.zuperz.the_bog.entity.variant.DuckVariant;
+import net.zuperz.the_bog.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
 public class ThrownDuckEgg extends ThrowableItemProjectile {
     public ThrownDuckEgg(EntityType<? extends net.minecraft.world.entity.projectile.ThrownEgg> pEntityType, Level pLevel) {
@@ -78,6 +87,6 @@ public class ThrownDuckEgg extends ThrowableItemProjectile {
     }
 
     protected Item getDefaultItem() {
-        return Items.EGG;
+        return ModItems.DUCK_EGG.get();
     }
 }

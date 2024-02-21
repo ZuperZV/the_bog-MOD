@@ -7,6 +7,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.zuperz.the_bog.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,10 +20,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        // Add Item Tags here
-        this.tag(ItemTags.TRIMMABLE_ARMOR)
-                //.add(ModItems.GILDED_NETHERITE_HELMET.get()
-                        ;
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.WEEPING_WILLOW_LOG.get().asItem())
+                .add(ModBlocks.WEEPING_WILLOW_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_WEEPING_WILLOW_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.WEEPING_WILLOW_PLANKS.get().asItem());
     }
 
     @Override
