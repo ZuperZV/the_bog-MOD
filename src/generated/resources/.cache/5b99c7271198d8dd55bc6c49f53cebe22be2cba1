@@ -1,11 +1,13 @@
-// 1.20.1	2024-02-21T17:41:20.4660234	Item Models: the_bog
+// 1.20.1	2024-02-22T17:16:24.5220774	Item Models: the_bog
 f256ff2caae9ae5c374f7cb318412e0756b37ebf assets/the_bog/models/item/bog_grass.json
 b403276fb6d3615ccbe281d44afa410ebe3956be assets/the_bog/models/item/duck_egg.json
 82778d01962279ccfe4f8767e67a81e0c6d99930 assets/the_bog/models/item/duck_feather.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/the_bog/models/item/duck_spawn_egg.json
 de1b67ed3a719464b22a6d088b16b0aa486fe91f assets/the_bog/models/item/mistveil_blossom.json
 15039aa891cacdbe501057bff1504ec3ca8821e9 assets/the_bog/models/item/raw_duck.json
+97a65a152cf7b41b761f0f20a294e56397721e02 assets/the_bog/models/item/weeping_willow_boat.json
 edc3b270dce96feddbc8f1d06334284c0327efff assets/the_bog/models/item/weeping_willow_button.json
+4bd801cead6b8cc6854720a16ff9393c109ae231 assets/the_bog/models/item/weeping_willow_chest_boat.json
 006764091226ca55d3d3dc21ccfda470ce499887 assets/the_bog/models/item/weeping_willow_door.json
 fbad00d1037e02ea8615bb52ed5db25759c67c05 assets/the_bog/models/item/weeping_willow_fence.json
 a919b358bc39cd0ebd522ba9d6ccb3c08d69a276 assets/the_bog/models/item/weeping_willow_hanging_sign.json

@@ -7,4 +7,10 @@ import net.zuperz.the_bog.The_Bog;
 public class ModModelLayers {
     public static final ModelLayerLocation DUCK_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "duck_layer"), "duck_layer");
+
+    public static final ModelLayerLocation WEEPING_WILLOW_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "boat/weeping_willow"), "main");
+
+    public static final ModelLayerLocation WEEPING_CHEST_WILLOW_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "chest_boat/weeping_willow"), "main");
 }

@@ -9,7 +9,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.The_Bog;
 import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.entity.ModEntities;
+import net.zuperz.the_bog.entity.custom.ModBoatEntity;
 import net.zuperz.the_bog.item.costom.DuckEggItem;
+import net.zuperz.the_bog.item.costom.ModBoatItem;
 import net.zuperz.the_bog.item.costom.ModFoodProperties;
 
 public class ModItems {
@@ -37,7 +39,11 @@ public class ModItems {
             () -> new HangingSignItem(ModBlocks.WEEPING_WILLOW_HANGING_SIGN.get(), ModBlocks.WEEPING_WILLOW_WALL_HANGING_SIGN.get(),
                     new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> WEEPING_WILLOW_BOAT = ITEMS.register("weeping_willow_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.WEEPING_WILLOW, new Item.Properties()));
 
+    public static final RegistryObject<Item> WEEPING_WILLOW_CHEST_BOAT = ITEMS.register("weeping_willow_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.WEEPING_WILLOW, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

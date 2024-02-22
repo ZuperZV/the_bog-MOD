@@ -21,6 +21,7 @@ import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
+import net.zuperz.the_bog.entity.client.ModBoatRenderer;
 import net.zuperz.the_bog.item.ModCreativeModeTabs;
 import net.zuperz.the_bog.item.ModItems;
 import net.zuperz.the_bog.pois.ModPOIs;
@@ -76,7 +77,12 @@ public class The_Bog {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
+            event.enqueueWork(() -> {
+                Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
+
+                EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
+                EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
+            });
         }
     }
 }

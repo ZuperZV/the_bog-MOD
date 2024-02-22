@@ -37,6 +37,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.WEEPING_WILLOW_SIGN);
         simpleItem(ModItems.WEEPING_WILLOW_HANGING_SIGN);
+
+        simpleItem(ModItems.WEEPING_WILLOW_BOAT);
+        simpleItem(ModItems.WEEPING_WILLOW_CHEST_BOAT);
     }
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

@@ -33,5 +33,10 @@
   "block.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign",
 
   "item.the_bog.weeping_willow_sign": "Weeping Willow sign",
-  "item.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign"
+  "item.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign",
+
+  "item.the_bog.weeping_willow_boat": "Weeping Willow Boat",
+  "item.the_bog.weeping_willow_chest_boat": "Weeping Willow Chest Boat",
+
+  "entity.the_bog.mod_chest_boat": "Chest Boat"
 }
