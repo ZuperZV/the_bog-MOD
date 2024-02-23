@@ -32,6 +32,9 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_DUCK = ITEMS.register("raw_duck",
             () -> new Item(new Item.Properties().food(ModFoodProperties.RAW_DUCK)));
 
+    public static final RegistryObject<Item> COOKED_DUCK = ITEMS.register("cooked_duck",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_DUCK)));
+
     public static final RegistryObject<Item> WEEPING_WILLOW_SIGN = ITEMS.register("weeping_willow_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.WEEPING_WILLOW_SIGN.get(), ModBlocks.WEEPING_WILLOW_WALL_SIGN.get()));
 
@@ -44,6 +47,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> WEEPING_WILLOW_CHEST_BOAT = ITEMS.register("weeping_willow_chest_boat",
             () -> new ModBoatItem(true, ModBoatEntity.Type.WEEPING_WILLOW, new Item.Properties()));
+
+    public static final RegistryObject<Item> BOGBLOSSOM_BOW = ITEMS.register("bogblossom_bow",
+            () -> new BowItem(new Item.Properties().durability(650)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

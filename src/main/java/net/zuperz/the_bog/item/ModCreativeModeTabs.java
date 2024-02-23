@@ -47,6 +47,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WEEPING_WILLOW_BOAT.get());
                         output.accept(ModItems.WEEPING_WILLOW_CHEST_BOAT.get());
 
+                        output.accept(ModItems.BOGBLOSSOM_BOW.get());
+
                         output.accept(ModBlocks.MISTVEIL_BLOSSOM.get());
                         output.accept(ModBlocks.BOG_GRASS.get());
                         output.accept(ModBlocks.MUD_STONE.get());

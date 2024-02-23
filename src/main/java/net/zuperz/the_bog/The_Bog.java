@@ -23,8 +23,8 @@ import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.entity.client.ModBoatRenderer;
 import net.zuperz.the_bog.item.ModCreativeModeTabs;
+import net.zuperz.the_bog.item.ModItemProperties;
 import net.zuperz.the_bog.item.ModItems;
-import net.zuperz.the_bog.pois.ModPOIs;
 import net.zuperz.the_bog.util.ModWoodTypes;
 import net.zuperz.the_bog.worldgen.biome.surface.ModSurfaceRules;
 import org.slf4j.Logger;
@@ -41,7 +41,6 @@ public class The_Bog {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        ModPOIs.register(modEventBus);
         ModEntities.register(modEventBus);
 
         ModCreativeModeTabs.register(modEventBus);
@@ -79,6 +78,8 @@ public class The_Bog {
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
+
+                ModItemProperties.addCustomItemProperties();
 
                 EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
