@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,8 +22,10 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.DUCK_FEATHER.get());
                         output.accept(ModItems.RAW_DUCK.get());
+                        output.accept(ModItems.COOKED_DUCK.get());
                         output.accept(ModItems.DUCK_EGG.get());
                         output.accept(ModItems.DUCK_SPAWN_EGG.get());
+                        output.accept(ModItems.SUMPGET_SPAWN_EGG.get());
 
                         output.accept(ModBlocks.WEEPING_WILLOW_LOG.get());
                         output.accept(ModBlocks.WEEPING_WILLOW_WOOD.get());
@@ -54,6 +57,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MUD_STONE.get());
 
                         output.accept(ModBlocks.THE_BOG_PORTAL.get());
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> BOG_ARMOR_TAB = CREATIVE_MODE_TABS.register("bog_armor_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BOGGANIUM_CHESTPLATE.get()))
+                    .title(Component.translatable("creativetab.bog_armor_tab"))
+                    .displayItems((displayParameters, output) -> {
+                        output.accept(ModItems.BOGGANIUM_HELMET.get());
+                        output.accept(ModItems.BOGWALKER_HELMET.get());
+
+                        output.accept(ModItems.BOGGANIUM_CHESTPLATE.get());
+                        output.accept(ModItems.BOGWALKER_CHESTPLATE.get());
+
+                        output.accept(ModItems.BOGGANIUM_LEGGINGS.get());
+                        output.accept(ModItems.BOGWALKER_LEGGINGS.get());
+
+                        output.accept(ModItems.BOGGANIUM_BOOTS.get());
+                        output.accept(ModItems.BOGWALKER_BOOTS.get());
                     }).build());
 
 

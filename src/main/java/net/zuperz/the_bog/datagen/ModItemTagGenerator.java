@@ -8,6 +8,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.zuperz.the_bog.block.ModBlocks;
+import net.zuperz.the_bog.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,6 +30,17 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.PLANKS)
                 .add(ModBlocks.WEEPING_WILLOW_PLANKS.get().asItem());
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.BOGGANIUM_HELMET.get())
+                .add(ModItems.BOGGANIUM_CHESTPLATE.get())
+                .add(ModItems.BOGGANIUM_LEGGINGS.get())
+                .add(ModItems.BOGGANIUM_BOOTS.get())
+
+                .add(ModItems.BOGWALKER_HELMET.get())
+                .add(ModItems.BOGWALKER_CHESTPLATE.get())
+                .add(ModItems.BOGWALKER_LEGGINGS.get())
+                .add(ModItems.BOGWALKER_BOOTS.get());
     }
 
     @Override

@@ -21,10 +21,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(ModItems.DUCK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SUMPGET_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.DUCK_FEATHER);
         simpleItem(ModItems.DUCK_EGG);
         simpleItem(ModItems.RAW_DUCK);
+        simpleItem(ModItems.COOKED_DUCK);
 
         simpleBlockItem(ModBlocks.MISTVEIL_BLOSSOM);
         simpleBlockItem(ModBlocks.BOG_GRASS);

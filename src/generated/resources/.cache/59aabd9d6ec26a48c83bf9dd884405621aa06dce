@@ -1,6 +1,7 @@
-// 1.20.1	2024-02-21T17:41:20.4670215	Block States: the_bog
+// 1.20.1	2024-02-24T16:02:26.9301717	Block States: the_bog
 eedbc5fbd407d93ea868ceced3d0efee8b7a8916 assets/the_bog/blockstates/bog_grass.json
 d68d10871f3dfbd7ad4f1ab7e8eac29ddae8e202 assets/the_bog/blockstates/mistveil_blossom.json
+8fc4452793aa7d39537f010e4ce88a7cbfec18ee assets/the_bog/blockstates/mud_stone.json
 115ba6518fab3bbc013a5b21103b93c2705b3984 assets/the_bog/blockstates/stripped_weeping_willow_log.json
 877a524603a0d1b9635df0057effc728e97b1232 assets/the_bog/blockstates/stripped_weeping_willow_wood.json
 55bc631270e370528c4d01fb6829501a63bf85cc assets/the_bog/blockstates/the_bog_portal.json
@@ -23,6 +24,7 @@ da69ef8bae6ed274212a7af392026e196c32440b assets/the_bog/blockstates/weeping_will
 6fb01da9b9d2989750fe1625608a3b8ca5708543 assets/the_bog/blockstates/weeping_willow_wood.json
 e7aa6454a9bc09ae30051116b391d9980fd72aab assets/the_bog/models/block/bog_grass.json
 e78110663299d4a19af1b532e2b470465ca24280 assets/the_bog/models/block/mistveil_blossom.json
+dc9f2a31d17f9eea19f5799cf28e43e5aecd9723 assets/the_bog/models/block/mud_stone.json
 69a6c4cee576ecf8facb87149704fa2e99284591 assets/the_bog/models/block/stripped_weeping_willow_log.json
 0acfc1cefb7705901a4b8c4dc0191b0b70723996 assets/the_bog/models/block/stripped_weeping_willow_log_horizontal.json
 755202147b75e66ebb7fc8be716f08b38eb1ea41 assets/the_bog/models/block/stripped_weeping_willow_wood.json
@@ -63,6 +65,7 @@ f73b0612c5b8113bd3fcf48d3542c6bb39916e16 assets/the_bog/models/block/weeping_wil
 4ff10064b0390f6624bf49e7d764bda1723d5cc1 assets/the_bog/models/block/weeping_willow_trapdoor_top.json
 54ddcdaa5dc6df6f072c6f3b5a00afbc5b9425bc assets/the_bog/models/block/weeping_willow_wood.json
 a96adf2adb8656ee30864c41cc4527c8295fbbc5 assets/the_bog/models/block/weeping_willow_wood_horizontal.json
+ff8dfd550b3b30c248ddd9b07395d3e67e62d053 assets/the_bog/models/item/mud_stone.json
 1f321716b0d96922e0d18e6f0eda35a3de338551 assets/the_bog/models/item/stripped_weeping_willow_log.json
 1e8fcc2f75a389a865bc481442c2776fb98bc437 assets/the_bog/models/item/stripped_weeping_willow_wood.json
 36258fa273b71a6e77b738ee327b5e6c8defb707 assets/the_bog/models/item/the_bog_portal.json

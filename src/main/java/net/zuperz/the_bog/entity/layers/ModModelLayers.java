@@ -8,6 +8,9 @@ public class ModModelLayers {
     public static final ModelLayerLocation DUCK_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "duck_layer"), "duck_layer");
 
+    public static final ModelLayerLocation SUMPGET_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "sumpget_layer"), "sumpget_layer");
+
     public static final ModelLayerLocation WEEPING_WILLOW_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "boat/weeping_willow"), "main");
 

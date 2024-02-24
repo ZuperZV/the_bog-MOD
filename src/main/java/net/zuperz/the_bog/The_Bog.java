@@ -22,6 +22,7 @@ import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.entity.client.ModBoatRenderer;
+import net.zuperz.the_bog.entity.client.Sumpget.SumpgetRenderer;
 import net.zuperz.the_bog.item.ModCreativeModeTabs;
 import net.zuperz.the_bog.item.ModItemProperties;
 import net.zuperz.the_bog.item.ModItems;
@@ -72,7 +73,7 @@ public class The_Bog {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = ForgeVersion.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = The_Bog.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -80,6 +81,10 @@ public class The_Bog {
                 Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
 
                 ModItemProperties.addCustomItemProperties();
+
+                EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
+                EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
+
 
                 EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));

@@ -12,7 +12,9 @@ import net.zuperz.the_bog.The_Bog;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Duck.DuckModel;
+import net.zuperz.the_bog.entity.client.Sumpget.SumpgetModel;
 import net.zuperz.the_bog.entity.custom.DuckEntity;
+import net.zuperz.the_bog.entity.custom.SumpgetEntity;
 import net.zuperz.the_bog.entity.layers.ModModelLayers;
 
 @Mod.EventBusSubscriber(modid = The_Bog.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -20,6 +22,7 @@ public class ModEventBusEvensts {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.DUCK_LAYER, DuckModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SUMPGET_LAYER, SumpgetModel::createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.WEEPING_WILLOW_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.WEEPING_CHEST_WILLOW_BOAT_LAYER, ChestBoatModel::createBodyModel);
@@ -27,6 +30,7 @@ public class ModEventBusEvensts {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.DUCK.get(), DuckEntity.createAttributes().build());
+        event.put(ModEntities.SUMPGET.get(), SumpgetEntity.createAttributes().build());
     }
 
     @SubscribeEvent

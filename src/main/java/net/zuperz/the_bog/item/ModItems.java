@@ -23,6 +23,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.DUCK, 0x544124, 0xecd8ba,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> SUMPGET_SPAWN_EGG = ITEMS.register("sumpget_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SUMPGET, 0xa4a4a4, 0x787878,
+                    new Item.Properties()));
+
     public static final RegistryObject<Item> DUCK_EGG = ITEMS.register("duck_egg",
             () -> new DuckEggItem((new Item.Properties()).stacksTo(16)));
 
@@ -51,6 +55,26 @@ public class ModItems {
     public static final RegistryObject<Item> BOGBLOSSOM_BOW = ITEMS.register("bogblossom_bow",
             () -> new BowItem(new Item.Properties().durability(650)));
 
+    public static final RegistryObject<Item> BOGGANIUM = ITEMS.register("bogganium",
+            () -> new BowItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOGGANIUM_HELMET = ITEMS.register("bogganium_helmet",
+            () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> BOGGANIUM_CHESTPLATE = ITEMS.register("bogganium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> BOGGANIUM_LEGGINGS = ITEMS.register("bogganium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> BOGGANIUM_BOOTS = ITEMS.register("bogganium_boots",
+            () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> BOGWALKER_HELMET = ITEMS.register("bogwalker_helmet",
+            () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> BOGWALKER_CHESTPLATE = ITEMS.register("bogwalker_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> BOGWALKER_LEGGINGS = ITEMS.register("bogwalker_leggings",
+            () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> BOGWALKER_BOOTS = ITEMS.register("bogwalker_boots",
+            () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -20,6 +20,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.THE_BOG_PORTAL);
         blockWithItem(ModBlocks.WEEPING_WILLOW_PLANKS);
+        blockWithItem(ModBlocks.MUD_STONE);
 
         simpleBlock(ModBlocks.BOG_GRASS.get(),
                 models().cross(blockTexture(ModBlocks.BOG_GRASS.get()).getPath(), blockTexture(ModBlocks.BOG_GRASS.get())).renderType("cutout"));
