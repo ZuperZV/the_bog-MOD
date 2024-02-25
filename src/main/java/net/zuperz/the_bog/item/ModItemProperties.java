@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 public class ModItemProperties {
     public static void addCustomItemProperties() {
         makeBow(ModItems.BOGBLOSSOM_BOW.get());
+        makeBow(ModItems.DIAMOND_BOGBLOSSOM_BOW.get());
     }
 
     private static void makeBow(Item item) {

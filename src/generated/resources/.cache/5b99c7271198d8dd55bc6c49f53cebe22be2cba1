@@ -1,4 +1,7 @@
-// 1.20.1	2024-02-24T15:24:30.3758336	Item Models: the_bog
+// 1.20.1	2024-02-25T01:05:22.2593642	Item Models: the_bog
+8dda683790d8c010781d2ea74aa8a7390fcf08a6 assets/the_bog/models/item/bogganium_ingot.json
+4e87716db7aa9d90d97731be33d839cc5d54bd58 assets/the_bog/models/item/bogganium_upgrade_smithing_template.json
+435e12fef7605689129f629cdbc62df92f2047ce assets/the_bog/models/item/bogskin.json
 f256ff2caae9ae5c374f7cb318412e0756b37ebf assets/the_bog/models/item/bog_grass.json
 6b0029df1693519559a876f68f243d98b12a604a assets/the_bog/models/item/cooked_duck.json
 b403276fb6d3615ccbe281d44afa410ebe3956be assets/the_bog/models/item/duck_egg.json

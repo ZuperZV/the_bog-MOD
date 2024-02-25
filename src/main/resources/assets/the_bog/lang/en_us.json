@@ -4,13 +4,32 @@
 
   "block.the_bog.the_bog_portal": "The Bog Portal",
   "item.the_bog.duck_spawn_egg": "Duck Spawn Egg",
+  "item.the_bog.sumpget_spawn_egg": "Sumpget Spawn Egg",
   "item.the_bog.raw_duck": "Raw Duck",
   "item.the_bog.duck_feather": "Duck Feather",
   "item.the_bog.duck_egg": "Duck Egg",
 
+  "item.the_bog.bogganium_ingot": "Bogganium Ingot",
+  "item.the_bog.bogskin": "Bogskin",
+
   "item.the_bog.bogblossom_bow": "Bogblossom Bow",
+  "item.the_bog.diamond_bogblossom_bow": "Diamond Bogblossom Bow",
+
+  "item.the_bog.bogganium_helmet": "Bogganium Helmet",
+  "item.the_bog.bogganium_chestplate": "Bogganium Chestplate",
+  "item.the_bog.bogganium_leggings": "Bogganium Leggings",
+  "item.the_bog.bogganium_boots": "Bogganium Boots",
+
+  "item.the_bog.bogwalker_helmet": "Bogwalker Helmet",
+  "item.the_bog.bogwalker_chestplate": "Bogwalker Chestplate",
+  "item.the_bog.bogwalker_leggings": "Bogwalker Leggings",
+  "item.the_bog.bogwalker_boots": "Bogwalker Boots",
+
+  "item.the_bog.cooked_duck": "Cooked Duck",
 
   "block.the_bog.mistveil_blossom": "Mistveil Blossom",
+
+  "block.the_bog.bog_grass": "Bog Grass",
 
   "block.the_bog.weeping_willow_log": "Weeping Willow Log",
   "block.the_bog.weeping_willow_wood": "Weeping Willow Wood",
@@ -41,5 +60,9 @@
   "item.the_bog.weeping_willow_boat": "Weeping Willow Boat",
   "item.the_bog.weeping_willow_chest_boat": "Weeping Willow Chest Boat",
 
-  "entity.the_bog.mod_chest_boat": "Chest Boat"
+  "entity.the_bog.mod_chest_boat": "Chest Boat",
+
+  "upgrade.the_bog.bogganium_upgrade": "Bogganium Upgrade",
+  "item.the_bog.smithing_template.bogganium_upgrade.applies_to": "Diamond Equipment",
+  "item.the_bog.smithing_template.bogganium_upgrade.ingredients": "Bogganium Ingot"
 }

@@ -1,0 +1,6 @@
+{
+    "parent": "the_bog:item/diamond_bogblossom_bow",
+    "textures": {
+        "layer0": "the_bog:item/diamond_bogblossom_bow_pulling_2"
+    }
+}

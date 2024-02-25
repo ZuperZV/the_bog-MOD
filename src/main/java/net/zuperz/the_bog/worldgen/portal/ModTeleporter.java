@@ -24,7 +24,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
 import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.block.custom.TheBogPortal;
-import net.zuperz.the_bog.pois.ModPOIs;
 import net.zuperz.the_bog.worldgen.dimension.ModDimensions;
 
 import javax.annotation.Nullable;

@@ -13,6 +13,7 @@ import net.zuperz.the_bog.entity.custom.ModBoatEntity;
 import net.zuperz.the_bog.item.costom.DuckEggItem;
 import net.zuperz.the_bog.item.costom.ModBoatItem;
 import net.zuperz.the_bog.item.costom.ModFoodProperties;
+import net.zuperz.the_bog.item.costom.ModSmithingTemplateItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -55,8 +56,17 @@ public class ModItems {
     public static final RegistryObject<Item> BOGBLOSSOM_BOW = ITEMS.register("bogblossom_bow",
             () -> new BowItem(new Item.Properties().durability(650)));
 
-    public static final RegistryObject<Item> BOGGANIUM = ITEMS.register("bogganium",
+    public static final RegistryObject<Item> DIAMOND_BOGBLOSSOM_BOW = ITEMS.register("diamond_bogblossom_bow",
+            () -> new BowItem(new Item.Properties().durability(2650)));
+
+    public static final RegistryObject<Item> BOGGANIUM_INGOT = ITEMS.register("bogganium_ingot",
             () -> new BowItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOGSKIN = ITEMS.register("bogskin",
+            () -> new BowItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOGGANIUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("bogganium_upgrade_smithing_template",
+            () -> ModSmithingTemplateItem.createBogganiumUpgradeTemplate());
 
     public static final RegistryObject<Item> BOGGANIUM_HELMET = ITEMS.register("bogganium_helmet",
             () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));

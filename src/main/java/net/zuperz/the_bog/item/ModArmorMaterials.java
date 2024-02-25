@@ -19,14 +19,14 @@ public enum ModArmorMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 9);
         p_266655_.put(ArmorItem.Type.HELMET, 2);
-    }), 7, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.1F, 0.2F, () -> Ingredient.of(ModItems.BOGGANIUM.get())),
+    }), 7, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.1F, 0.2F, () -> Ingredient.of(ModItems.BOGGANIUM_INGOT.get())),
 
     BOGWALKER("bogwalker", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266654_) -> {
         p_266654_.put(ArmorItem.Type.BOOTS, 2);
         p_266654_.put(ArmorItem.Type.LEGGINGS, 5);
         p_266654_.put(ArmorItem.Type.CHESTPLATE, 6);
         p_266654_.put(ArmorItem.Type.HELMET, 2);
-    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.1F, () -> Ingredient.of(ModItems.BOGGANIUM.get()));
+    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.1F, () -> Ingredient.of(ModItems.BOGSKIN.get()));
 
 
     public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);

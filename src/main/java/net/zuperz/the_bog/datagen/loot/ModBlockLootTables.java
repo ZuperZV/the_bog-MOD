@@ -2,7 +2,9 @@ package net.zuperz.the_bog.datagen.loot;
 
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.item.ModItems;
@@ -57,6 +59,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createSingleItemTable(ModItems.WEEPING_WILLOW_HANGING_SIGN.get()));
         this.add(ModBlocks.WEEPING_WILLOW_WALL_HANGING_SIGN.get(), block ->
                 createSingleItemTable(ModItems.WEEPING_WILLOW_HANGING_SIGN.get()));
+
+        this.dropSelf(ModBlocks.BOG_GRASS.get());
     }
 
     @Override

@@ -26,6 +26,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DUCK_EGG.get());
                         output.accept(ModItems.DUCK_SPAWN_EGG.get());
                         output.accept(ModItems.SUMPGET_SPAWN_EGG.get());
+                        output.accept(ModItems.BOGSKIN.get());
+                        output.accept(ModItems.BOGGANIUM_INGOT.get());
+                        output.accept(ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE.get());
 
                         output.accept(ModBlocks.WEEPING_WILLOW_LOG.get());
                         output.accept(ModBlocks.WEEPING_WILLOW_WOOD.get());
@@ -51,6 +54,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WEEPING_WILLOW_CHEST_BOAT.get());
 
                         output.accept(ModItems.BOGBLOSSOM_BOW.get());
+                        output.accept(ModItems.DIAMOND_BOGBLOSSOM_BOW.get());
 
                         output.accept(ModBlocks.MISTVEIL_BLOSSOM.get());
                         output.accept(ModBlocks.BOG_GRASS.get());

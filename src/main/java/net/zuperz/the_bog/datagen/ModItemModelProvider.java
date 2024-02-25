@@ -28,6 +28,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_DUCK);
         simpleItem(ModItems.COOKED_DUCK);
 
+        simpleItem(ModItems.BOGGANIUM_INGOT);
+        simpleItem(ModItems.BOGSKIN);
+
         simpleBlockItem(ModBlocks.MISTVEIL_BLOSSOM);
         simpleBlockItem(ModBlocks.BOG_GRASS);
 
@@ -42,6 +45,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.WEEPING_WILLOW_BOAT);
         simpleItem(ModItems.WEEPING_WILLOW_CHEST_BOAT);
+
+        simpleItem(ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE);
     }
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
