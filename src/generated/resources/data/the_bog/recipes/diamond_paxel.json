@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BA ",
+    " A "
+  ],
+  "result": {
+    "item": "the_bog:diamond_paxel"
+  },
+  "show_notification": true
+}

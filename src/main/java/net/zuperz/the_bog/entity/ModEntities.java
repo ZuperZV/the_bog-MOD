@@ -7,10 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.The_Bog;
-import net.zuperz.the_bog.entity.custom.DuckEntity;
-import net.zuperz.the_bog.entity.custom.ModBoatEntity;
-import net.zuperz.the_bog.entity.custom.ModChestBoatEntity;
-import net.zuperz.the_bog.entity.custom.SumpgetEntity;
+import net.zuperz.the_bog.entity.custom.*;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -19,6 +16,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DuckEntity>> DUCK =
             ENTITY_TYPES.register("duck", () -> EntityType.Builder.of(DuckEntity::new, MobCategory.CREATURE)
                     .sized(0.6f, 1.4f).build("duck"));
+
+    public static final RegistryObject<EntityType<Marsh_LurkerEntity>> MARSH_LURKER =
+            ENTITY_TYPES.register("marsh_lurker", () -> EntityType.Builder.of(Marsh_LurkerEntity::new, MobCategory.MONSTER)
+                    .sized(1.0f, 0.8f).build("marsh_lurker"));
 
     public static final RegistryObject<EntityType<SumpgetEntity>> SUMPGET =
             ENTITY_TYPES.register("sumpget", () -> EntityType.Builder.of(SumpgetEntity::new, MobCategory.CREATURE)

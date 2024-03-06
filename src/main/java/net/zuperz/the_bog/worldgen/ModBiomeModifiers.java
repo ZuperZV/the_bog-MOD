@@ -23,11 +23,6 @@ public class ModBiomeModifiers {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        /*context.register(ADD_TREE_WEEPING_WILLOW, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.WEEPING_WILLOW_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
-         */
 
 
     }

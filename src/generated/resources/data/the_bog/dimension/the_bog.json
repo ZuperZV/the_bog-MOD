@@ -6,7 +6,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "the_bog:test_biome",
+          "biome": "the_bog:bog_wetlands",
           "parameters": {
             "continentalness": 0.0,
             "depth": 0.0,
@@ -19,6 +19,18 @@
         },
         {
           "biome": "the_bog:test_biome_2",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.1,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "the_bog:bog_wetlands",
           "parameters": {
             "continentalness": 0.0,
             "depth": 0.0,

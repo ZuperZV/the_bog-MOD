@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "the_bog:bogblossom_bow"
+  },
+  "result": {
+    "item": "the_bog:diamond_bogblossom_bow"
+  },
+  "template": []
+}

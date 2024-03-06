@@ -15,16 +15,6 @@
   "item.the_bog.bogblossom_bow": "Bogblossom Bow",
   "item.the_bog.diamond_bogblossom_bow": "Diamond Bogblossom Bow",
 
-  "item.the_bog.bogganium_helmet": "Bogganium Helmet",
-  "item.the_bog.bogganium_chestplate": "Bogganium Chestplate",
-  "item.the_bog.bogganium_leggings": "Bogganium Leggings",
-  "item.the_bog.bogganium_boots": "Bogganium Boots",
-
-  "item.the_bog.bogwalker_helmet": "Bogwalker Helmet",
-  "item.the_bog.bogwalker_chestplate": "Bogwalker Chestplate",
-  "item.the_bog.bogwalker_leggings": "Bogwalker Leggings",
-  "item.the_bog.bogwalker_boots": "Bogwalker Boots",
-
   "item.the_bog.cooked_duck": "Cooked Duck",
 
   "block.the_bog.mistveil_blossom": "Mistveil Blossom",
@@ -54,6 +44,8 @@
   "block.the_bog.weeping_willow_sign": "Weeping Willow sign",
   "block.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign",
 
+  "block.the_bog.slimey_rocks": "Slimey Rocks",
+
   "item.the_bog.weeping_willow_sign": "Weeping Willow sign",
   "item.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign",
 
@@ -61,6 +53,97 @@
   "item.the_bog.weeping_willow_chest_boat": "Weeping Willow Chest Boat",
 
   "entity.the_bog.mod_chest_boat": "Chest Boat",
+
+  "item.the_bog.mudstone_sword": "Mud Stone Sword",
+  "item.the_bog.mudstone_pickaxe": "Mud Stone Pickaxe",
+  "item.the_bog.mudstone_shovel": "Mud Stone Shovel",
+  "item.the_bog.mudstone_axe": "Mud Stone Axe",
+  "item.the_bog.mudstone_hoe": "Mud Stone Hoe",
+  "item.the_bog.mudstone_paxel": "Mud Stone Paxel",
+
+  "item.the_bog.silver_sword": "Silver Sword",
+  "item.the_bog.silver_pickaxe": "Silver Pickaxe",
+  "item.the_bog.silver_shovel": "Silver Shovel",
+  "item.the_bog.silver_axe": "Silver Axe",
+  "item.the_bog.silver_hoe": "Silver Hoe",
+  "item.the_bog.silver_paxel": "Silver Paxel",
+
+  "item.the_bog.bogganium_helmet": "Bogganium Helmet",
+  "item.the_bog.bogganium_chestplate": "Bogganium Chestplate",
+  "item.the_bog.bogganium_leggings": "Bogganium Leggings",
+  "item.the_bog.bogganium_boots": "Bogganium Boots",
+
+  "item.the_bog.bogwalker_helmet": "Bogwalker Helmet",
+  "item.the_bog.bogwalker_chestplate": "Bogwalker Chestplate",
+  "item.the_bog.bogwalker_leggings": "Bogwalker Leggings",
+  "item.the_bog.bogwalker_boots": "Bogwalker Boots",
+
+  "item.the_bog.silver_helmet": "Silver Helmet",
+  "item.the_bog.silver_chestplate": "Silver Chestplate",
+  "item.the_bog.silver_leggings": "Silver Leggings",
+  "item.the_bog.silver_boots": "Silver Boots",
+
+  "block.the_bog.silver_ore": "Silver Ore",
+  "block.the_bog.deepslate_silver_ore": "Deepslate Silver Ore",
+  "block.the_bog.silver_block": "Silver Block",
+  "block.the_bog.raw_silver_block": "Raw Silver Block",
+
+  "item.the_bog.boggy_chops": "Boggy Chops",
+  "item.the_bog.cooked_boggy_chops": "Cooked Boggy Chops",
+
+  "item.the_bog.mudstone_shard_fragment": "Mudstone Shard Fragment",
+  "item.the_bog.mudstone_shard": "Mudstone Shard",
+
+  "block.the_bog.mud_stone": "Mud Stone",
+  "block.the_bog.mossy_mud_stone_bricks": "Mossy Mud Stone Bricks",
+  "block.the_bog.mud_stone_bricks": "Mud Stone Bricks",
+  "block.the_bog.andesite_mud_stone": "Mud Andesite",
+
+  "item.the_bog.silver": "Silver",
+  "item.the_bog.raw_silver": "Raw Silver",
+
+  "item.the_bog.slimy_piece_of_skin": "Slimy Piece Of Skin",
+  "item.the_bog.marsh_lurker_spawn_egg": "Marsh Lurker Spawn Egg",
+
+  "item.the_bog.marsh_lurker_flesh": "Marsh lurker flesh",
+  "item.the_bog.cooked_marsh_lurker_flesh": "Cooked Marsh lurker flesh",
+
+
+  "entity.the_bog.marsh_lurker": "Marsh Lurker",
+
+  "effect.the_bog.stone_wall_effect": "Stone Wall",
+
+  "item.the_bog.silver_diamond_helmet": "Silver Diamond Helmet",
+  "item.the_bog.silver_diamond_chestplate": "Silver Diamond Chestplate",
+  "item.the_bog.silver_diamond_leggings": "Silver Diamond Leggings",
+  "item.the_bog.silver_diamond_boots": "Silver Diamond Boots",
+
+  "item.the_bog.silver_diamond_sword": "Silver Diamond Sword",
+  "item.the_bog.silver_diamond_pickaxe": "Silver Diamond Pickaxe",
+  "item.the_bog.silver_diamond_shovel": "Silver Diamond Shovel",
+  "item.the_bog.silver_diamond_axe": "Silver Diamond Axe",
+  "item.the_bog.silver_diamond_hoe": "Silver Diamond Hoe",
+  "item.the_bog.silver_diamond_paxel": "Silver Diamond Paxel",
+
+  "item.the_bog.bogganium_sword": "Bogganium Sword",
+  "item.the_bog.bogganium_pickaxe": "Bogganium Pickaxe",
+  "item.the_bog.bogganium_shovel": "Bogganium Shovel",
+  "item.the_bog.bogganium_axe": "Bogganium Axe",
+  "item.the_bog.bogganium_hoe": "Bogganium Hoe",
+  "item.the_bog.bogganium_paxel": "Bogganium Paxel",
+
+  "item.the_bog.diamond_paxel": "Diamond Paxel",
+
+  "tooltip.the_bog.boggaium_bucket.tooltip.shift": "Fill a bucket with boggium fluid that spawns in The Bog Dimension",
+  "tooltip.the_bog.boggaium_bucket.tooltip": "Press §eSHIFT§r for more Information",
+
+  "item.the_bog.bogganium_water_bucket": "Bgganium Bucket",
+  "fluid_type.the_bog.bogganium_water_fluid": "Bogganium Fluid",
+
+  "item.minecraft.potion.effect.stone_wall_potion": "Stone Wall Potion",
+  "item.minecraft.splash_potion.effect.stone_wall_potion": "Stone Wall Splash Potion",
+  "item.minecraft.lingering_potion.effect.stone_wall_potion": "Stone Wall Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.stone_wall_potion": "Stone Wall Lingering Potion",
 
   "upgrade.the_bog.bogganium_upgrade": "Bogganium Upgrade",
   "item.the_bog.smithing_template.bogganium_upgrade.applies_to": "Diamond Equipment",

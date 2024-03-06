@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bogganium_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_bog:bogganium_water_bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "the_bog:bogganium_ingot_2"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bogganium_bucket",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "the_bog:bogganium_ingot_2"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "the_bog:silver"
+    }
+  },
+  "pattern": [
+    "BB",
+    " A",
+    " A"
+  ],
+  "result": {
+    "item": "the_bog:silver_hoe"
+  },
+  "show_notification": true
+}

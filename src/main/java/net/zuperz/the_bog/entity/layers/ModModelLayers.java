@@ -11,6 +11,11 @@ public class ModModelLayers {
     public static final ModelLayerLocation SUMPGET_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "sumpget_layer"), "sumpget_layer");
 
+    public static final ModelLayerLocation MARSH_LURKER_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "marsh_lurker_layer"), "marsh_lurker_layer");
+
+    /* Boat */
+
     public static final ModelLayerLocation WEEPING_WILLOW_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "boat/weeping_willow"), "main");
 

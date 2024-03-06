@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "the_bog:marsh_lurker_flesh"
+  },
+  "result": "the_bog:cooked_marsh_lurker_flesh"
+}

@@ -1,5 +1,6 @@
 package net.zuperz.the_bog.datagen;
 
+import net.minecraft.world.item.Items;
 import net.zuperz.the_bog.The_Bog;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.item.ModItems;
+import net.zuperz.the_bog.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -40,7 +42,31 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.BOGWALKER_HELMET.get())
                 .add(ModItems.BOGWALKER_CHESTPLATE.get())
                 .add(ModItems.BOGWALKER_LEGGINGS.get())
-                .add(ModItems.BOGWALKER_BOOTS.get());
+                .add(ModItems.BOGWALKER_BOOTS.get())
+
+                .add(ModItems.SILVER_HELMET.get())
+                .add(ModItems.SILVER_CHESTPLATE.get())
+                .add(ModItems.SILVER_LEGGINGS.get())
+                .add(ModItems.SILVER_BOOTS.get())
+
+                .add(ModItems.SILVER_DIAMOND_HELMET.get())
+                .add(ModItems.SILVER_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.SILVER_DIAMOND_LEGGINGS.get())
+                .add(ModItems.SILVER_DIAMOND_BOOTS.get());
+
+        this.tag(ModTags.Items.BOG_LEATHER)
+                .add(ModItems.BOGSKIN.get())
+                .add(ModItems.SLIMY_PIECE_OF_SKIN.get());
+
+        this.tag(ModTags.Items.SILVER_DIAMOND)
+                .add(ModItems.SILVER.get())
+                .add(Items.DIAMOND);
+
+        this.tag(ItemTags.STONE_TOOL_MATERIALS)
+                .add(ModBlocks.MUD_STONE.get().asItem())
+                .add(ModBlocks.MOSSY_MUD_STONE_BRICKS.get().asItem())
+                .add(ModBlocks.MUD_STONE_BRICKS.get().asItem())
+                .add(ModBlocks.ANDESITE_MUD_STONE.get().asItem());
     }
 
     @Override

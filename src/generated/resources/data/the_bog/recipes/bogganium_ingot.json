@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "the_bog:silver"
+    },
+    "B": {
+      "item": "the_bog:bogganium_water_bucket"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 2,
+    "item": "the_bog:bogganium_ingot"
+  },
+  "show_notification": true
+}

@@ -1,7 +1,12 @@
 package net.zuperz.the_bog.worldgen;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.LakeFeature;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.zuperz.the_bog.The_Bog;
 import net.minecraft.core.Holder;
@@ -13,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.zuperz.the_bog.block.ModBlocks;
+import net.zuperz.the_bog.worldgen.biome.ModBiomes;
 
 import java.util.List;
 
@@ -21,7 +27,14 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BOG_GRASS_PLACED_KEY = registerKey("bog_grass_placed");
     public static final ResourceKey<PlacedFeature> BOG_FLOWER_PLACED_KEY = registerKey("bog_flower_placed");
 
+    public static final ResourceKey<PlacedFeature> PLACED_LAKE_BOGGAIUM = registerKey("boggaium_lake");
+
     public static final ResourceKey<PlacedFeature> WEEPING_WILLOW_PLACED_KEY = registerKey("weeping_willow_placed");
+    public static final ResourceKey<PlacedFeature> BOG_WEEPING_WILLOW_PLACED_KEY = registerKey("bog_weeping_willow_placed");
+    public static final ResourceKey<PlacedFeature> BIG_BOG_WEEPING_WILLOW_PLACED_KEY = registerKey("bog_weeping_willow_placed");
+
+    public static final ResourceKey<PlacedFeature> SILVER_ORE_PLACED_KEY = registerKey("silver_ore_placed");
+
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -35,6 +48,21 @@ public class ModPlacedFeatures {
         register(context, WEEPING_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.WEEPING_WILLOW_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         ModBlocks.WEEPING_WILLOW_SAPLING.get()));
+
+        register(context, BOG_WEEPING_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BOG_WEEPING_WILLOW_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),
+                        ModBlocks.WEEPING_WILLOW_SAPLING.get()));
+
+        register(context, BIG_BOG_WEEPING_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BIG_BOG_WEEPING_WILLOW_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),
+                        ModBlocks.WEEPING_WILLOW_SAPLING.get()));
+
+        register(context, SILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILVER_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(4,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+
+        context.register(PLACED_LAKE_BOGGAIUM, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.LAKE_BOGGAIUM),
+                List.of(RarityFilter.onAverageOnceEvery(200),InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,  BiomeFilter.biome())));
     }
 
 

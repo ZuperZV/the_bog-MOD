@@ -52,12 +52,16 @@ public class ModChestBoatEntity extends ChestBoat {
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         pCompound.putString("Type", this.getModVariant().getSerializedName());
+        super.addAdditionalSaveData(pCompound);
+        this.addChestVehicleSaveData(pCompound);
     }
 
     protected void readAdditionalSaveData(CompoundTag pCompound) {
         if (pCompound.contains("Type", 8)) {
             this.setVariant(ModBoatEntity.Type.byName(pCompound.getString("Type")));
         }
+        super.readAdditionalSaveData(pCompound);
+        this.readChestVehicleSaveData(pCompound);
     }
 
     public ModBoatEntity.Type getModVariant() {

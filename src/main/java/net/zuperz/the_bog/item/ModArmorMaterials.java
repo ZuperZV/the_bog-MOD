@@ -9,6 +9,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.zuperz.the_bog.util.ModTags;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
@@ -21,12 +22,26 @@ public enum ModArmorMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.HELMET, 2);
     }), 7, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.1F, 0.2F, () -> Ingredient.of(ModItems.BOGGANIUM_INGOT.get())),
 
-    BOGWALKER("bogwalker", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266654_) -> {
-        p_266654_.put(ArmorItem.Type.BOOTS, 2);
+    SILVER("silver", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266654_) -> {
+        p_266654_.put(ArmorItem.Type.BOOTS, 3);
         p_266654_.put(ArmorItem.Type.LEGGINGS, 5);
-        p_266654_.put(ArmorItem.Type.CHESTPLATE, 6);
+        p_266654_.put(ArmorItem.Type.CHESTPLATE, 7);
         p_266654_.put(ArmorItem.Type.HELMET, 2);
-    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.1F, () -> Ingredient.of(ModItems.BOGSKIN.get()));
+    }), 19, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.1F, () -> Ingredient.of(ModItems.SILVER.get())),
+
+    BOGWALKER("bogwalker", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266654_) -> {
+        p_266654_.put(ArmorItem.Type.BOOTS, 5);
+        p_266654_.put(ArmorItem.Type.LEGGINGS, 7);
+        p_266654_.put(ArmorItem.Type.CHESTPLATE, 9);
+        p_266654_.put(ArmorItem.Type.HELMET, 4);
+    }), 20, SoundEvents.ARMOR_EQUIP_IRON, 0.3F, 0.1F, () -> Ingredient.of(ModItems.BOGSKIN.get())),
+
+    SILVER_DIAMOND("silver_diamond", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266654_) -> {
+        p_266654_.put(ArmorItem.Type.BOOTS, 4);
+        p_266654_.put(ArmorItem.Type.LEGGINGS, 6);
+        p_266654_.put(ArmorItem.Type.CHESTPLATE, 8);
+        p_266654_.put(ArmorItem.Type.HELMET, 3);
+    }), 18, SoundEvents.ARMOR_EQUIP_IRON, 0.2F, 0.1F, () -> Ingredient.of(ModTags.Items.SILVER_DIAMOND));
 
 
     public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);

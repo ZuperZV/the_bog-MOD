@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/flowerbed_3",
+	"textures": {
+		"flowerbed": "the_bog:block/slimey_rocks"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "the_bog:stripped_weeping_willow_log"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "the_bog:weeping_willow_planks"
+  }
+}

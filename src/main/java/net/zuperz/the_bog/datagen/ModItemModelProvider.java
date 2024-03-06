@@ -22,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         withExistingParent(ModItems.DUCK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SUMPGET_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.MARSH_LURKER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.DUCK_FEATHER);
         simpleItem(ModItems.DUCK_EGG);
@@ -47,6 +48,51 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WEEPING_WILLOW_CHEST_BOAT);
 
         simpleItem(ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE);
+
+        simpleItem(ModItems.MUDSTONE_SHARD_FRAGMENT);
+        simpleItem(ModItems.MUDSTONE_SHARD);
+
+        simpleItem(ModItems.SILVER);
+        simpleItem(ModItems.RAW_SILVER);
+
+        simpleItem(ModItems.SLIMY_PIECE_OF_SKIN);
+        simpleItem(ModItems.COOKED_MARSH_LURKER_FLESH);
+        simpleItem(ModItems.MARSH_LURKER_FLESH);
+
+        handheldItem(ModItems.MUDSTONE_SWORD);
+        handheldItem(ModItems.MUDSTONE_PICKAXE);
+        handheldItem(ModItems.MUDSTONE_AXE);
+        handheldItem(ModItems.MUDSTONE_SHOVEL);
+        handheldItem(ModItems.MUDSTONE_HOE);
+        handheldItem(ModItems.MUDSTONE_PAXEL);
+
+        handheldItem(ModItems.SILVER_SWORD);
+        handheldItem(ModItems.SILVER_PICKAXE);
+        handheldItem(ModItems.SILVER_AXE);
+        handheldItem(ModItems.SILVER_SHOVEL);
+        handheldItem(ModItems.SILVER_HOE);
+        handheldItem(ModItems.SILVER_PAXEL);
+
+        handheldItem(ModItems.SILVER_DIAMOND_SWORD);
+        handheldItem(ModItems.SILVER_DIAMOND_PICKAXE);
+        handheldItem(ModItems.SILVER_DIAMOND_AXE);
+        handheldItem(ModItems.SILVER_DIAMOND_SHOVEL);
+        handheldItem(ModItems.SILVER_DIAMOND_HOE);
+        handheldItem(ModItems.SILVER_DIAMOND_PAXEL);
+
+        handheldItem(ModItems.BOGGANIUM_SWORD);
+        handheldItem(ModItems.BOGGANIUM_PICKAXE);
+        handheldItem(ModItems.BOGGANIUM_AXE);
+        handheldItem(ModItems.BOGGANIUM_SHOVEL);
+        handheldItem(ModItems.BOGGANIUM_HOE);
+        handheldItem(ModItems.BOGGANIUM_PAXEL);
+
+        handheldItem(ModItems.DIAMOND_PAXEL);
+
+        simpleItem(ModItems.BOGGANIUM_WATER_BUCKET);
+
+        simpleItem(ModItems.BOGGY_CHOPS);
+        simpleItem(ModItems.COOKED_BOGGY_CHOPS);
     }
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

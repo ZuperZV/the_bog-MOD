@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_marsh_lurker_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_bog:marsh_lurker_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "the_bog:marsh_lurker_flesh_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_marsh_lurker_flesh",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "the_bog:marsh_lurker_flesh_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

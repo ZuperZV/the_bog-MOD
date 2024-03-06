@@ -32,12 +32,16 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.variant.SumpgetVariant;
 import net.zuperz.the_bog.entity.variant.SumpgetVariant;
+import net.zuperz.the_bog.entity.variant.SumpgetVariant;
 import net.zuperz.the_bog.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class SumpgetEntity extends TamableAnimal {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
+            SynchedEntityData.defineId(SumpgetEntity.class, EntityDataSerializers.INT);
 
     public final AnimationState sitAnimationState = new AnimationState();
 
@@ -91,7 +95,7 @@ public class SumpgetEntity extends TamableAnimal {
         return ModEntities.SUMPGET.get().create(pLevel);
     }
 
-    private void setupAnimationStates() {
+    /*private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
             this.idleAnimationState.start(this.tickCount);
@@ -120,6 +124,33 @@ public class SumpgetEntity extends TamableAnimal {
 
         this.walkAnimation.update(f, 0.2F);
     }
+     */
+
+    private void setupAnimationStates() {
+        if (this.idleAnimationTimeout <= 0) {
+            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
+            this.idleAnimationState.start(this.tickCount);
+        } else {
+            --this.idleAnimationTimeout;
+        }
+
+        if(this.isInSittingPose()) {
+            sitAnimationState.startIfStopped(this.tickCount);
+        } else {
+            sitAnimationState.stop();
+        }
+    }
+
+    protected void updateWalkAnimation(float v) {
+        float f;
+        if (this.getPose() == Pose.STANDING) {
+            f = Math.min(v * 6.0F, 1.0F);
+        } else {
+            f = 0.0F;
+        }
+
+        this.walkAnimation.update(f, 0.2F);
+    }
 
     @Override
     public void tick() {
@@ -128,6 +159,46 @@ public class SumpgetEntity extends TamableAnimal {
         if (this.level().isClientSide()) {
             this.setupAnimationStates();
         }
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    }
+
+    /* VARIANT */
+
+    public SumpgetVariant getVariant() {
+        return SumpgetVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    private int getTypeVariant() {
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    private void setVariant(SumpgetVariant variant) {
+        this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
+                                        @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+        SumpgetVariant variant = Util.getRandom(SumpgetVariant.values(), this.random);
+        this.setVariant(variant);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        this.entityData.set(DATA_ID_TYPE_VARIANT, pCompound.getInt("Variant"));
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putInt("Variant", this.getTypeVariant());
     }
 
     /* SOUND */

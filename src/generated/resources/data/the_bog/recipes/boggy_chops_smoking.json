@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "the_bog:boggy_chops"
+  },
+  "result": "the_bog:cooked_boggy_chops"
+}

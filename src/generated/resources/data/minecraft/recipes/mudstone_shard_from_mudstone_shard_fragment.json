@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mudstone",
+  "key": {
+    "#": {
+      "item": "the_bog:mudstone_shard_fragment"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "the_bog:mudstone_shard"
+  },
+  "show_notification": true
+}

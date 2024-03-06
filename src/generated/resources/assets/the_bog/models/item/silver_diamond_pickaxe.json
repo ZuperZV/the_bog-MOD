@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "the_bog:item/silver_diamond_pickaxe"
+  }
+}

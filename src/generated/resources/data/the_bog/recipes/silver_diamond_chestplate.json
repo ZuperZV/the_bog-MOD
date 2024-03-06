@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "the_bog:silver"
+    },
+    "B": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "A A",
+    "BAB",
+    "BAB"
+  ],
+  "result": {
+    "item": "the_bog:silver_diamond_chestplate"
+  },
+  "show_notification": true
+}

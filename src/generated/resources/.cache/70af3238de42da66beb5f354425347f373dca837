@@ -1,9 +1,11 @@
-// 1.20.1	2024-02-20T21:35:18.8546658	Block Tags
+// 1.20.1	2024-03-05T15:01:01.6204078	Block Tags
 8309cd3cd1dc62359cbaa72dc83bc7d29ffbdfdb data/minecraft/tags/blocks/fences.json
 155f5ef35c895b8c1593952d18ba5857e1248b3e data/minecraft/tags/blocks/fence_gates.json
 27ddba9685755a996b8dcb5ef78727d7591b2e94 data/minecraft/tags/blocks/logs_that_burn.json
 618d2cb4d20496f9dca6af4ae1b76aba3c8ad245 data/minecraft/tags/blocks/mineable/axe.json
+fb481fdc124c36b42703a2df401b2aa0111cd79d data/minecraft/tags/blocks/mineable/pickaxe.json
 72c920ccc998566f0f04ec83fa3629ef1cb553a5 data/minecraft/tags/blocks/planks.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/the_bog/tags/blocks/blacklist_portal_frame_blocks.json
-321b39c1f48ea04f6cf7a6717db88c49660a515c data/the_bog/tags/blocks/bog_dirt.json
+8de89de6c432337581fa7b3341427a8cb8150778 data/the_bog/tags/blocks/bog_dirt.json
+64ba52a0503fe733de3f3907b7f157cb0821a8e3 data/the_bog/tags/blocks/mineable/paxel.json
 321b39c1f48ea04f6cf7a6717db88c49660a515c data/the_bog/tags/blocks/portal_frame_blocks.json

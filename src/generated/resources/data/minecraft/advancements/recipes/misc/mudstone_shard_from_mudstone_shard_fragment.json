@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mudstone_shard_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_bog:mudstone_shard_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mudstone_shard_from_mudstone_shard_fragment"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mudstone_shard_fragment",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mudstone_shard_from_mudstone_shard_fragment"
+    ]
+  },
+  "sends_telemetry_event": false
+}

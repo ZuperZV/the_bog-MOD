@@ -63,13 +63,13 @@ public class SumpgetModel<T extends SumpgetEntity> extends HierarchicalModel<T> 
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 	@Override
-	public void setupAnim(SumpgetEntity entity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+	public void setupAnim(SumpgetEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.applyHeadRotation(entity, pNetHeadYaw, pHeadPitch, pAgeInTicks);
+		this.applyHeadRotation(entity, netHeadYaw, headPitch, ageInTicks);
 
-		this.animateWalk(ModAnimationDefinitions.SUMPGET_WALK, pLimbSwing, pLimbSwingAmount, 2f, 2.5f);
-		this.animate(entity.idleAnimationState, ModAnimationDefinitions.SUMPGET_IDLE, pAgeInTicks, 1f);
-		this.animate(entity.sitAnimationState, ModAnimationDefinitions.SUMPGET_SIT, pAgeInTicks, 1f);
+		this.animateWalk(ModAnimationDefinitions.SUMPGET_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animate(entity.idleAnimationState, ModAnimationDefinitions.IDLE, ageInTicks, 1f);
+		this.animate(entity.sitAnimationState, ModAnimationDefinitions.SUMPGET_SIT, ageInTicks, 1f);
 	}
 
 	private void applyHeadRotation(SumpgetEntity entity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

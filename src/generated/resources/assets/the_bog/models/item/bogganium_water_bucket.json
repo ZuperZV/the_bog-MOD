@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "the_bog:item/bogganium_water_bucket"
+  }
+}
