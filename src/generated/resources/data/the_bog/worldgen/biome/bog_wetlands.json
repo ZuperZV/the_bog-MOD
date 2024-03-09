@@ -8,7 +8,7 @@
   },
   "downfall": 0.8,
   "effects": {
-    "fog_color": 6537390,
+    "fog_color": 12638463,
     "foliage_color": 2439714,
     "grass_color": 3165484,
     "mood_sound": {
@@ -17,9 +17,9 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 3197208,
-    "water_color": 6140557,
-    "water_fog_color": 5545342
+    "sky_color": 7586402,
+    "water_color": 6388580,
+    "water_fog_color": 2302743
   },
   "features": [
     [],
@@ -54,7 +54,9 @@
       "minecraft:ore_tuff",
       "minecraft:disk_clay"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
@@ -62,15 +64,19 @@
     [
       "minecraft:glow_lichen",
       "minecraft:patch_grass_forest",
+      "minecraft:patch_berry_rare",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "the_bog:weeping_willow_placed",
       "the_bog:bog_weeping_willow_placed",
       "minecraft:flower_swamp",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
-      "minecraft:red_mushroom_swamp"
+      "minecraft:red_mushroom_swamp",
+      "minecraft:seagrass_swamp",
+      "minecraft:kelp_cold"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -86,13 +92,13 @@
         "type": "minecraft:frog",
         "maxCount": 5,
         "minCount": 2,
-        "weight": 5
+        "weight": 3
       },
       {
         "type": "the_bog:duck",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 5
+        "maxCount": 6,
+        "minCount": 2,
+        "weight": 3
       }
     ],
     "misc": [],
@@ -101,13 +107,13 @@
         "type": "minecraft:slime",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 2
+        "weight": 4
       },
       {
         "type": "the_bog:marsh_lurker",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 1
+        "weight": 6
       }
     ],
     "underground_water_creature": [],

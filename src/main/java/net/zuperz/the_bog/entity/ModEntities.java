@@ -17,6 +17,10 @@ public class ModEntities {
             ENTITY_TYPES.register("duck", () -> EntityType.Builder.of(DuckEntity::new, MobCategory.CREATURE)
                     .sized(0.6f, 1.4f).build("duck"));
 
+    public static final RegistryObject<EntityType<BogEntity>> BOGE =
+            ENTITY_TYPES.register("boge", () -> EntityType.Builder.of(BogEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).build("boge"));
+
     public static final RegistryObject<EntityType<Marsh_LurkerEntity>> MARSH_LURKER =
             ENTITY_TYPES.register("marsh_lurker", () -> EntityType.Builder.of(Marsh_LurkerEntity::new, MobCategory.MONSTER)
                     .sized(1.0f, 0.8f).build("marsh_lurker"));
@@ -32,6 +36,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<ModChestBoatEntity>> MOD_CHEST_BOAT =
             ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("mod_chest_boat"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

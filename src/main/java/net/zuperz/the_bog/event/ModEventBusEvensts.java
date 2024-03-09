@@ -11,9 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.zuperz.the_bog.The_Bog;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
+import net.zuperz.the_bog.entity.client.Boge.BogeModel;
 import net.zuperz.the_bog.entity.client.Duck.DuckModel;
 import net.zuperz.the_bog.entity.client.Marsh_Lurker.Marsh_LurkerModel;
 import net.zuperz.the_bog.entity.client.Sumpget.SumpgetModel;
+import net.zuperz.the_bog.entity.custom.BogEntity;
 import net.zuperz.the_bog.entity.custom.DuckEntity;
 import net.zuperz.the_bog.entity.custom.Marsh_LurkerEntity;
 import net.zuperz.the_bog.entity.custom.SumpgetEntity;
@@ -26,12 +28,14 @@ public class ModEventBusEvensts {
         event.registerLayerDefinition(ModModelLayers.DUCK_LAYER, DuckModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SUMPGET_LAYER, SumpgetModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.MARSH_LURKER_LAYER, Marsh_LurkerModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BOGE_LAYER, BogeModel::createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.WEEPING_WILLOW_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModModelLayers.WEEPING_CHEST_WILLOW_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.BOGE.get(), BogEntity.createAttributes().build());
         event.put(ModEntities.DUCK.get(), DuckEntity.createAttributes().build());
         event.put(ModEntities.SUMPGET.get(), SumpgetEntity.createAttributes().build());
         event.put(ModEntities.MARSH_LURKER.get(), Marsh_LurkerEntity.createAttributes().build());

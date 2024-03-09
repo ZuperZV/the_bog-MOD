@@ -38,7 +38,6 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WEEPING_WILLOW_KEY = registerKey("weeping_willow_key");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BOG_WEEPING_WILLOW_KEY = registerKey("bog_weeping_willow_key");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_BOG_WEEPING_WILLOW_KEY = registerKey("big_bog_weeping_willow_key");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey("silver_ore");
 
@@ -68,13 +67,6 @@ public class ModConfiguredFeatures {
         register(context, BOG_WEEPING_WILLOW_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.WEEPING_WILLOW_LOG.get()),
                 new StraightTrunkPlacer(2, 3, 3),
-                BlockStateProvider.simple(ModBlocks.WEEPING_WILLOW_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new LeaveVineDecorator(0.25F))).build());
-
-        register(context, BIG_BOG_WEEPING_WILLOW_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.WEEPING_WILLOW_LOG.get()),
-                new StraightTrunkPlacer(4, 3, 3),
                 BlockStateProvider.simple(ModBlocks.WEEPING_WILLOW_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new LeaveVineDecorator(0.25F))).build());

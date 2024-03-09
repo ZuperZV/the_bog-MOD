@@ -31,7 +31,6 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> WEEPING_WILLOW_PLACED_KEY = registerKey("weeping_willow_placed");
     public static final ResourceKey<PlacedFeature> BOG_WEEPING_WILLOW_PLACED_KEY = registerKey("bog_weeping_willow_placed");
-    public static final ResourceKey<PlacedFeature> BIG_BOG_WEEPING_WILLOW_PLACED_KEY = registerKey("bog_weeping_willow_placed");
 
     public static final ResourceKey<PlacedFeature> SILVER_ORE_PLACED_KEY = registerKey("silver_ore_placed");
 
@@ -53,16 +52,12 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),
                         ModBlocks.WEEPING_WILLOW_SAPLING.get()));
 
-        register(context, BIG_BOG_WEEPING_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BIG_BOG_WEEPING_WILLOW_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),
-                        ModBlocks.WEEPING_WILLOW_SAPLING.get()));
-
         register(context, SILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILVER_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(4,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
         context.register(PLACED_LAKE_BOGGAIUM, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.LAKE_BOGGAIUM),
-                List.of(RarityFilter.onAverageOnceEvery(200),InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,  BiomeFilter.biome())));
+                List.of(RarityFilter.onAverageOnceEvery(150),InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,  BiomeFilter.biome())));
     }
 
 

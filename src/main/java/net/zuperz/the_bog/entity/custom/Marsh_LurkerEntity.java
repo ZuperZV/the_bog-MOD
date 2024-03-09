@@ -81,7 +81,7 @@ public class Marsh_LurkerEntity extends Animal {
         }
 
         if(this.isAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 19; // Length in ticks of your animation
+            attackAnimationTimeout = 10; // Length in ticks of your animation
             attackAnimationState.start(this.tickCount);
         } else {
             --this.attackAnimationTimeout;

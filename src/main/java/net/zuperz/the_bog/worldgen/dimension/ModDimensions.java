@@ -45,7 +45,7 @@ public class ModDimensions {
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
                 1.0f, // ambientLight
-                new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
+                new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 5)));
     }
 
     public static void bootstrapStem(BootstapContext<LevelStem> context) {

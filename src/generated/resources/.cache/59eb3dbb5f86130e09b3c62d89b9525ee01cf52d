@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-04T15:32:04.6120278	Loot Tables
+// 1.20.1	2024-03-07T14:46:44.0293358	Loot Tables
 02abce35b9925e25056c26260150b8e9c7227644 data/the_bog/loot_tables/blocks/andesite_mud_stone.json
 2b69e74ec5bff18640708c4a7c87de3a34e28bc2 data/the_bog/loot_tables/blocks/bog_grass.json
 e4145ac5eb8ca23fab428bd3aafaf90ddcf2e588 data/the_bog/loot_tables/blocks/deepslate_silver_ore.json
@@ -10,6 +10,7 @@ bca37870f344e9b29cfe57d48dd095246028005f data/the_bog/loot_tables/blocks/potted_
 c7dde1faba49a1ddaca0a858cfa7f295a4b1f0b3 data/the_bog/loot_tables/blocks/raw_silver_block.json
 998d32fe858b2f6ad55c2c8d47a27eae313a627c data/the_bog/loot_tables/blocks/silver_block.json
 c48b906d7f820126f9468a9dec1c81e5e90d6ebc data/the_bog/loot_tables/blocks/silver_ore.json
+75674d2636d2bee0c7f8b528196b5564440fb66a data/the_bog/loot_tables/blocks/slimey_rocks.json
 d84cc6d84f4d44afc2c8138bbd9985208d1b0a95 data/the_bog/loot_tables/blocks/stripped_weeping_willow_log.json
 62b2e642f89b177ca2b6216fd3710661b3f9a4b0 data/the_bog/loot_tables/blocks/stripped_weeping_willow_wood.json
 a6e1c33c487242f7a221d0316dcdf1215115a4d8 data/the_bog/loot_tables/blocks/the_bog_portal.json

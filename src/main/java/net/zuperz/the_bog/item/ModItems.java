@@ -1,6 +1,8 @@
 package net.zuperz.the_bog.item;
 
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +32,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.MARSH_LURKER, 0x828f7d, 0x6e736c,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> BOGE_SPAWN_EGG = ITEMS.register("boge_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.BOGE, 0x282828, 0x434f28,
+                    new Item.Properties()));
+
     public static final RegistryObject<Item> DUCK_EGG = ITEMS.register("duck_egg",
             () -> new DuckEggItem((new Item.Properties()).stacksTo(16)));
 
@@ -47,6 +53,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> COOKED_DUCK = ITEMS.register("cooked_duck",
             () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_DUCK)));
+
 
     public static final RegistryObject<Item> MARSH_LURKER_FLESH = ITEMS.register("marsh_lurker_flesh",
             () -> new Item(new Item.Properties().food(ModFoodProperties.MARSH_LURKER_FLESH)));

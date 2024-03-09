@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DUCK_SPAWN_EGG.get());
                         output.accept(ModItems.SUMPGET_SPAWN_EGG.get());
                         output.accept(ModItems.MARSH_LURKER_SPAWN_EGG.get());
+                        output.accept(ModItems.BOGE_SPAWN_EGG.get());
                         output.accept(ModItems.BOGSKIN.get());
                         output.accept(ModItems.RAW_SILVER.get());
                         output.accept(ModItems.SILVER.get());

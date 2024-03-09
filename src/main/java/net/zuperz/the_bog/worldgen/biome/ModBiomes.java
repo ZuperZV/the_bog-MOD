@@ -120,8 +120,8 @@ public class ModBiomes {
         BiomeDefaultFeatures.addSwampClayDisk(biomeBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.WEEPING_WILLOW_PLACED_KEY);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.BOG_WEEPING_WILLOW_PLACED_KEY);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.BIG_BOG_WEEPING_WILLOW_PLACED_KEY);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
@@ -136,7 +136,7 @@ public class ModBiomes {
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 4, 1, 1));
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 3, 2, 5));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.DUCK.get(), 3, 3, 6));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.DUCK.get(), 3, 2, 6));
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.MARSH_LURKER.get(), 6, 1, 2));
 
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP);
@@ -150,7 +150,7 @@ public class ModBiomes {
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(6388580)
                         .waterFogColor(2302743)
-                        .skyColor(0x30c918)
+                        .skyColor(0x73c262)
                         .grassColorOverride(0x304d2c)
                         .foliageColorOverride(0x253a22)
                         .fogColor(12638463)

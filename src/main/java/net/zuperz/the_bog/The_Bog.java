@@ -28,6 +28,7 @@ import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.effect.ModEffects;
 import net.zuperz.the_bog.entity.ModEntities;
+import net.zuperz.the_bog.entity.client.Boge.BogeRenderer;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.entity.client.Marsh_Lurker.Marsh_LurkerRenderer;
 import net.zuperz.the_bog.entity.client.ModBoatRenderer;
@@ -74,6 +75,7 @@ public class The_Bog {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            EntityRenderers.register(ModEntities.BOGE.get(), BogeRenderer::new);
             EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
             EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
             EntityRenderers.register(ModEntities.MARSH_LURKER.get(), Marsh_LurkerRenderer::new);
@@ -106,6 +108,7 @@ public class The_Bog {
                 ModItemProperties.addCustomItemProperties();
 
                 EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
+                EntityRenderers.register(ModEntities.BOGE.get(), BogeRenderer::new);
                 EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
                 EntityRenderers.register(ModEntities.MARSH_LURKER.get(), Marsh_LurkerRenderer::new);
 

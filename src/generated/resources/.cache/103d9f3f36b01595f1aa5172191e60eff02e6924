@@ -1,7 +1,7 @@
-// 1.20.1	2024-03-05T15:29:52.6480817	Registries
+// 1.20.1	2024-03-08T20:23:46.3521284	Registries
 7495796c0ef2d8bcf31ee3aa39a23f2563e9080b data/the_bog/dimension/the_bog.json
-4e70838bb8a94b01c2f3d3b9b61966b1279bdc3c data/the_bog/dimension_type/the_bog_type.json
-787d4732100a798ca0bb517ab9b994d1439a8835 data/the_bog/worldgen/biome/bog_wetlands.json
+8a4d5447f89b0bae61c284b7236d0f74f60b44e4 data/the_bog/dimension_type/the_bog_type.json
+942b66484db408ce6fce59d06a779bc930a13f44 data/the_bog/worldgen/biome/bog_wetlands.json
 6f74d3155db871431378d9f8450e416373f58d8b data/the_bog/worldgen/biome/test_biome.json
 3f90b5c1d9af014b59013243e3df2159cfad6d85 data/the_bog/worldgen/biome/test_biome_2.json
 15d49427cce4889bc02fd7b52c31f2b47de2ba8a data/the_bog/worldgen/configured_feature/boggaium_lake.json
@@ -10,7 +10,7 @@
 53fc157e6f6279603c1db52548bdb2212b6bd7c3 data/the_bog/worldgen/configured_feature/bog_weeping_willow_key.json
 21237a5900a579af6d8b2871450be7c589cbeac0 data/the_bog/worldgen/configured_feature/silver_ore.json
 fff4482b207b96f8e4f0276279e5c673714231a9 data/the_bog/worldgen/configured_feature/weeping_willow_key.json
-672e44ee3cc620661e96d23db2da592445053a6a data/the_bog/worldgen/placed_feature/boggaium_lake.json
+29a6d45a7ee51e0c701b1946a4218c38c9f47847 data/the_bog/worldgen/placed_feature/boggaium_lake.json
 ce74d17c94ef49c5a90b7fd076e4ad82ab42c098 data/the_bog/worldgen/placed_feature/bog_flower_placed.json
 9ef00907a7b4e1c77a50d43c88f136b198ed42aa data/the_bog/worldgen/placed_feature/bog_grass_placed.json
 0cfb717518fcc2de49fcd85c0ed447a0360caf33 data/the_bog/worldgen/placed_feature/bog_weeping_willow_placed.json

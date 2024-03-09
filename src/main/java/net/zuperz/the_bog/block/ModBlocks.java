@@ -57,7 +57,7 @@ public class ModBlocks {
             () -> new FlowerPotBlock((() -> (FlowerPotBlock)Blocks.FLOWER_POT), MISTVEIL_BLOSSOM, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
 
     public static final RegistryObject<Block> SLIMEY_ROCKS = registerBlock("slimey_rocks",
-            () -> new PinkPetalsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)));
+            () -> new PinkPetalsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY).noOcclusion()));
 
     public static final RegistryObject<Block> BOG_GRASS = registerBlock("bog_grass",
             () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.ALLIUM)));
@@ -72,6 +72,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(1, 2)));
+
+
 
     /* Wood */
     public static final RegistryObject<Block> WEEPING_WILLOW_LOG = registerBlock("weeping_willow_log",

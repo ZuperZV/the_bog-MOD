@@ -38,6 +38,7 @@ public class DuckEntity extends Animal {
     public float flapping = 1.0F;
     private float nextFlap = 1.0F;
     public int eggTime = this.random.nextInt(6000) + 6000;
+    public boolean isDuckJockey;
 
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(DuckEntity.class, EntityDataSerializers.INT);
@@ -182,6 +183,7 @@ public class DuckEntity extends Animal {
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.entityData.set(DATA_ID_TYPE_VARIANT, pCompound.getInt("Variant"));
+        this.isDuckJockey = pCompound.getBoolean("isDuckJockey");
         this.eggTime = pCompound.getInt("EggLayTime");
     }
 
@@ -189,6 +191,7 @@ public class DuckEntity extends Animal {
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putInt("Variant", this.getTypeVariant());
+        pCompound.putBoolean("isDuckJockey", this.isDuckJockey);
         pCompound.putInt("EggLayTime", this.eggTime);
     }
 
@@ -210,5 +213,37 @@ public class DuckEntity extends Animal {
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return SoundEvents.CHICKEN_HURT;
+    }
+
+
+    public boolean removeWhenFarAway(double pDistanceToClosestPlayer) {
+        return this.isDuckJockey();
+    }
+
+    protected void positionRider(Entity pPassenger, Entity.MoveFunction pCallback) {
+        super.positionRider(pPassenger, pCallback);
+        float f = Mth.sin(this.yBodyRot * ((float)Math.PI / 180F));
+        float f1 = Mth.cos(this.yBodyRot * ((float)Math.PI / 180F));
+        float f2 = 0.1F;
+        float f3 = 0.0F;
+        pCallback.accept(pPassenger, this.getX() + (double)(0.1F * f), this.getY(0.5D) + pPassenger.getMyRidingOffset() + 0.0D, this.getZ() - (double)(0.1F * f1));
+        if (pPassenger instanceof LivingEntity) {
+            ((LivingEntity)pPassenger).yBodyRot = this.yBodyRot;
+        }
+
+    }
+
+    /**
+     * Determines if this chicken is a jokey with a zombie riding it.
+     */
+    public boolean isDuckJockey() {
+        return this.isDuckJockey;
+    }
+
+    /**
+     * Sets whether this chicken is a jockey or not.
+     */
+    public void setDuckJockey(boolean pIsDuckJockey) {
+        this.isDuckJockey = pIsDuckJockey;
     }
 }
