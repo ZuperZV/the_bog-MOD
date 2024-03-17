@@ -6,63 +6,87 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
+          "biome": "the_bog:slime_plains",
+          "parameters": {
+            "continentalness": -1.2,
+            "depth": -1.0,
+            "erosion": -1.0,
+            "humidity": -1.4,
+            "offset": 0.0,
+            "temperature": -1.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "the_bog:superior_lakes",
+          "parameters": {
+            "continentalness": -0.45,
+            "depth": 0.0,
+            "erosion": -1.0,
+            "humidity": -1.0,
+            "offset": 0.0,
+            "temperature": -0.15,
+            "weirdness": -1.8
+          }
+        },
+        {
           "biome": "the_bog:bog_wetlands",
           "parameters": {
-            "continentalness": 0.0,
-            "depth": 0.0,
-            "erosion": 0.0,
-            "humidity": 0.0,
-            "offset": 0.0,
-            "temperature": 0.0,
-            "weirdness": 0.0
-          }
-        },
-        {
-          "biome": "the_bog:test_biome_2",
-          "parameters": {
-            "continentalness": 0.0,
-            "depth": 0.0,
-            "erosion": 0.2,
-            "humidity": 0.2,
-            "offset": 0.0,
-            "temperature": 0.1,
-            "weirdness": 0.0
-          }
-        },
-        {
-          "biome": "the_bog:bog_wetlands",
-          "parameters": {
-            "continentalness": 0.0,
-            "depth": 0.0,
-            "erosion": 0.2,
-            "humidity": 0.2,
-            "offset": 0.0,
-            "temperature": 0.1,
-            "weirdness": 0.0
-          }
-        },
-        {
-          "biome": "minecraft:ocean",
-          "parameters": {
-            "continentalness": 0.1,
-            "depth": 0.0,
-            "erosion": 0.1,
-            "humidity": 0.6,
-            "offset": 0.0,
-            "temperature": 0.3,
-            "weirdness": 0.0
-          }
-        },
-        {
-          "biome": "minecraft:dark_forest",
-          "parameters": {
-            "continentalness": 0.2,
-            "depth": 0.0,
-            "erosion": 0.1,
+            "continentalness": 0.03,
+            "depth": 1.0,
+            "erosion": -1.0,
             "humidity": 0.3,
             "offset": 0.0,
-            "temperature": 0.4,
-            "weirdness": 0.0
+            "temperature": 0.2,
+            "weirdness": -0.05
+          }
+        },
+        {
+          "biome": "the_bog:eroded_valleys",
+          "parameters": {
+            "continentalness": 0.3,
+            "depth": -1.0,
+            "erosion": -1.2,
+            "humidity": -1.0,
+            "offset": 0.0,
+            "temperature": -0.3,
+            "weirdness": -1.7
+          }
+        },
+        {
+          "biome": "the_bog:warped_caverns",
+          "parameters": {
+            "continentalness": 0.7,
+            "depth": 1.0,
+            "erosion": 0.7799,
+            "humidity": 1.0,
+            "offset": 0.0,
+            "temperature": 0.15,
+            "weirdness": 0.2
+          }
+        },
+        {
+          "biome": "the_bog:swamp_forest",
+          "parameters": {
+            "continentalness": 0.6,
+            "depth": 1.0,
+            "erosion": 0.76,
+            "humidity": 1.05,
+            "offset": 0.0,
+            "temperature": -0.16,
+            "weirdness": 0.2
+          }
+        },
+        {
+          "biome": "the_bog:mire_marsh",
+          "parameters": {
+            "continentalness": 0.7,
+            "depth": 1.0,
+            "erosion": 0.5899,
+            "humidity": 1.03,
+            "offset": 0.0,
+            "temperature": -0.19,
+            "weirdness": 0.269
           }
         }
       ]

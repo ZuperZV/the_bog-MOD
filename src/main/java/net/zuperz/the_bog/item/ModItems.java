@@ -36,6 +36,13 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.BOGE, 0x282828, 0x434f28,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> WET_SLIME_SPAWN_EGG = ITEMS.register("wet_slime_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.WET_SLIME, 0x82d4d7, 0x6dbbbe,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> WET_SLIME_BALL = ITEMS.register("wet_slime_ball",
+            () -> new Item((new Item.Properties()).stacksTo(16)));
+
     public static final RegistryObject<Item> DUCK_EGG = ITEMS.register("duck_egg",
             () -> new DuckEggItem((new Item.Properties()).stacksTo(16)));
 
@@ -54,6 +61,8 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_DUCK = ITEMS.register("cooked_duck",
             () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_DUCK)));
 
+    public static final RegistryObject<Item> HOME_STONE_SHARD = ITEMS.register("home_stone_shard",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MARSH_LURKER_FLESH = ITEMS.register("marsh_lurker_flesh",
             () -> new Item(new Item.Properties().food(ModFoodProperties.MARSH_LURKER_FLESH)));
@@ -90,19 +99,22 @@ public class ModItems {
             () -> new BowItem(new Item.Properties().durability(2650)));
 
     public static final RegistryObject<Item> BOGGANIUM_INGOT = ITEMS.register("bogganium_ingot",
-            () -> new BowItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BOGSKIN = ITEMS.register("bogskin",
-            () -> new BowItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MUDSTONE_SHARD_FRAGMENT = ITEMS.register("mudstone_shard_fragment",
-            () -> new BowItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MUDSTONE_SHARD = ITEMS.register("mudstone_shard",
-            () -> new BowItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BOGGANIUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("bogganium_upgrade_smithing_template",
             () -> ModSmithingTemplateItem.createBogganiumUpgradeTemplate());
+
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BOGGANIUM_HELMET = ITEMS.register("bogganium_helmet",
             () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));

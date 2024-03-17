@@ -1,17 +1,15 @@
 package net.zuperz.the_bog;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.particle.BreakingItemParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BrewingStandBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -23,7 +21,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.versions.forge.ForgeVersion;
 import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.effect.ModEffects;
@@ -33,15 +30,17 @@ import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.entity.client.Marsh_Lurker.Marsh_LurkerRenderer;
 import net.zuperz.the_bog.entity.client.ModBoatRenderer;
 import net.zuperz.the_bog.entity.client.Sumpget.SumpgetRenderer;
+import net.zuperz.the_bog.entity.client.wet_slime.WetSlimeRenderer;
 import net.zuperz.the_bog.fluid.ModFluidTypes;
 import net.zuperz.the_bog.fluid.ModFluids;
 import net.zuperz.the_bog.item.ModCreativeModeTabs;
 import net.zuperz.the_bog.item.ModItemProperties;
 import net.zuperz.the_bog.item.ModItems;
+import net.zuperz.the_bog.particles.ModParticles;
 import net.zuperz.the_bog.potion.BetterBrewingRecipe;
 import net.zuperz.the_bog.potion.ModPotions;
 import net.zuperz.the_bog.util.ModWoodTypes;
-import net.zuperz.the_bog.worldgen.biome.surface.ModSurfaceRules;
+import net.zuperz.the_bog.villager.ModVillagers;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -58,6 +57,8 @@ public class The_Bog {
 
         ModEntities.register(modEventBus);
 
+        ModVillagers.register(modEventBus);
+
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
 
@@ -66,6 +67,8 @@ public class The_Bog {
 
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+
+        ModParticles.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -79,6 +82,7 @@ public class The_Bog {
             EntityRenderers.register(ModEntities.DUCK.get(), DuckRenderer::new);
             EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
             EntityRenderers.register(ModEntities.MARSH_LURKER.get(), Marsh_LurkerRenderer::new);
+            EntityRenderers.register(ModEntities.WET_SLIME.get(), WetSlimeRenderer::new);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MISTVEIL_BLOSSOM.getId(), ModBlocks.POTTED_MISTVEIL_BLOSSOM);
 
@@ -111,13 +115,14 @@ public class The_Bog {
                 EntityRenderers.register(ModEntities.BOGE.get(), BogeRenderer::new);
                 EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
                 EntityRenderers.register(ModEntities.MARSH_LURKER.get(), Marsh_LurkerRenderer::new);
-
+                EntityRenderers.register(ModEntities.WET_SLIME.get(), WetSlimeRenderer::new);
 
                 EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
 
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BOGGANIUM_WATER.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BOGGANIUM_WATER.get(), RenderType.translucent());
+
             });
         }
     }

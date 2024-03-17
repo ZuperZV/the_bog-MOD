@@ -29,6 +29,12 @@ public class ModEntities {
             ENTITY_TYPES.register("sumpget", () -> EntityType.Builder.of(SumpgetEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 1.3F).build("sumpget"));
 
+    public static final RegistryObject<EntityType<WetSlimeEntity>> WET_SLIME =
+            ENTITY_TYPES.register("wet_slime", () -> EntityType.Builder.of(WetSlimeEntity::new, MobCategory.CREATURE)
+                    .sized(1.9F, 1.9F).build("wet_slime"));
+
+
+
     public static final RegistryObject<EntityType<ModBoatEntity>> MOD_BOAT =
             ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("mod_boat"));

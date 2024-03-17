@@ -1,9 +1,15 @@
-// 1.20.1	2024-03-08T20:23:46.3521284	Registries
-7495796c0ef2d8bcf31ee3aa39a23f2563e9080b data/the_bog/dimension/the_bog.json
-8a4d5447f89b0bae61c284b7236d0f74f60b44e4 data/the_bog/dimension_type/the_bog_type.json
-942b66484db408ce6fce59d06a779bc930a13f44 data/the_bog/worldgen/biome/bog_wetlands.json
-6f74d3155db871431378d9f8450e416373f58d8b data/the_bog/worldgen/biome/test_biome.json
-3f90b5c1d9af014b59013243e3df2159cfad6d85 data/the_bog/worldgen/biome/test_biome_2.json
+// 1.20.1	2024-03-16T17:26:25.1776123	Registries
+f12484c1cd3e8b052ded43efc26e1163cb9a36ba data/the_bog/dimension/the_bog.json
+86e0bba623dd40382c246eca603ba1bbd02e8b41 data/the_bog/dimension_type/the_bog_type.json
+9e0a81acdfd2813ca845acfad2a0a9be4249e9de data/the_bog/worldgen/biome/bog_wetlands.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/eroded_valleys.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/mire_marsh.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/slime_plains.json
+bdfc58a70403b9980255c133783f0d2b34c78fc4 data/the_bog/worldgen/biome/superior_lakes.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/swamp_forest.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/test_biome.json
+a67e12961e1ae82b20f9579c515737c191a3dec3 data/the_bog/worldgen/biome/test_biome_2.json
+8cdb94238b46df419b184427c09988831e8932ca data/the_bog/worldgen/biome/warped_caverns.json
 15d49427cce4889bc02fd7b52c31f2b47de2ba8a data/the_bog/worldgen/configured_feature/boggaium_lake.json
 26e79e1a97a1a43aeb1ab219315ebc44b06dd3bc data/the_bog/worldgen/configured_feature/bog_flower.json
 8ae4127cd94215a0fd643e52192f0b99865b0e4b data/the_bog/worldgen/configured_feature/bog_grass.json

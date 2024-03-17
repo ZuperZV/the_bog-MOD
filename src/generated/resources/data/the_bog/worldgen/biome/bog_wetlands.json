@@ -9,7 +9,7 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 2439714,
+    "foliage_color": 3165484,
     "grass_color": 3165484,
     "mood_sound": {
       "block_search_extent": 8,
@@ -77,9 +77,6 @@
       "minecraft:red_mushroom_swamp",
       "minecraft:seagrass_swamp",
       "minecraft:kelp_cold"
-    ],
-    [
-      "minecraft:freeze_top_layer"
     ]
   ],
   "has_precipitation": true,
@@ -120,5 +117,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.3
 }

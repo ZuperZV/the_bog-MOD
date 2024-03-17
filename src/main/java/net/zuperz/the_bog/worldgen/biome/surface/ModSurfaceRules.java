@@ -31,6 +31,10 @@ public class ModSurfaceRules {
                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MUD)),
                         SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, MUD)),
 
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SUPERIOR_LAKES),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MUD)),
+                        SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, DIRT)),
+
 
                 // Default to a grass and dirt surface
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)

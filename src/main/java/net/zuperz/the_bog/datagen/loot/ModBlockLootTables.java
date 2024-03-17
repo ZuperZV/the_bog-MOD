@@ -23,9 +23,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.MUD_STONE_BRICKS.get());
         this.dropSelf(ModBlocks.ANDESITE_MUD_STONE.get());
 
+        this.dropSelf(ModBlocks.WET_SLIME_BLOCK.get());
+
         this.dropSelf(ModBlocks.SLIMEY_ROCKS.get());
 
         this.dropSelf(ModBlocks.THE_BOG_PORTAL.get());
+        this.dropSelf(ModBlocks.THE_HOME_PORTAL.get());
 
         this.dropSelf(ModBlocks.WEEPING_WILLOW_PLANKS.get());
         this.dropSelf(ModBlocks.WEEPING_WILLOW_LOG.get());

@@ -17,9 +17,15 @@
 
   "item.the_bog.cooked_duck": "Cooked Duck",
 
+  "item.the_bog.home_stone_shard": "Home Stone Shard",
+
+  "entity.minecraft.villager.the_bog.portalmaster": "Portal Master",
+
   "block.the_bog.mistveil_blossom": "Mistveil Blossom",
 
   "block.the_bog.bog_grass": "Bog Grass",
+
+  "item.the_bog.ruby": "Ruby",
 
   "block.the_bog.weeping_willow_log": "Weeping Willow Log",
   "block.the_bog.weeping_willow_wood": "Weeping Willow Wood",
@@ -43,6 +49,10 @@
 
   "block.the_bog.weeping_willow_sign": "Weeping Willow sign",
   "block.the_bog.weeping_willow_hanging_sign": "Weeping Willow Hanging Sign",
+
+  "block.the_bog.op_the_bog_portal": "The Op Bog Portal",
+
+  "block.the_bog.the_home_portal": "The Home Portal",
 
   "block.the_bog.slimey_rocks": "Slimey Rocks",
 
@@ -108,7 +118,11 @@
   "item.the_bog.marsh_lurker_flesh": "Marsh lurker flesh",
   "item.the_bog.cooked_marsh_lurker_flesh": "Cooked Marsh lurker flesh",
 
+  "item.the_bog.wet_slime_ball": "Wet SlimeBall",
+  "item.the_bog.wet_slime_spawn_egg": "Wet Slime Spawn Egg",
+  "item.the_bog.boge_spawn_egg": "Boge Spawn Egg",
 
+  "entity.the_bog.wet_slime": "Wet Slime",
   "entity.the_bog.marsh_lurker": "Marsh Lurker",
 
   "effect.the_bog.stone_wall_effect": "Stone Wall",
@@ -134,9 +148,6 @@
 
   "item.the_bog.diamond_paxel": "Diamond Paxel",
 
-  "tooltip.the_bog.boggaium_bucket.tooltip.shift": "Fill a bucket with boggium fluid that spawns in The Bog Dimension",
-  "tooltip.the_bog.boggaium_bucket.tooltip": "Press §eSHIFT§r for more Information",
-
   "item.the_bog.bogganium_water_bucket": "Bgganium Bucket",
   "fluid_type.the_bog.bogganium_water_fluid": "Bogganium Fluid",
 
@@ -147,5 +158,14 @@
 
   "upgrade.the_bog.bogganium_upgrade": "Bogganium Upgrade",
   "item.the_bog.smithing_template.bogganium_upgrade.applies_to": "Diamond Equipment",
-  "item.the_bog.smithing_template.bogganium_upgrade.ingredients": "Bogganium Ingot"
+  "item.the_bog.smithing_template.bogganium_upgrade.ingredients": "Bogganium Ingot",
+
+  "tooltip.the_bog.boggaium_bucket.tooltip.shift": "Fill a bucket with boggium fluid that spawns in The Bog Dimension",
+  "tooltip.the_bog.boggaium_bucket.tooltip": "Press §eSHIFT§r for more Information",
+
+  "tooltip.the_bog.the_bog_portal.tooltip.shift": "Gets you to the Bog Dimension and back",
+  "tooltip.the_bog.the_bog_portal.tooltip": "Press §eSHIFT§r for more Information",
+
+  "tooltip.the_bog.the_bog_portal_home.tooltip.shift": "Gets you to the Bog Dimension, but how du you get back?",
+  "tooltip.the_bog.the_bog_portal_home.tooltip": "Press §eSHIFT§r for more Information"
 }

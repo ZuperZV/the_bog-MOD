@@ -26,6 +26,7 @@ public class ModFluids {
             .slopeFindDistance(4).levelDecreasePerBlock(3).block(ModBlocks.BOGGANIUM_WATER_BLOCK)
             .bucket(ModItems.BOGGANIUM_WATER_BUCKET);
 
+
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }

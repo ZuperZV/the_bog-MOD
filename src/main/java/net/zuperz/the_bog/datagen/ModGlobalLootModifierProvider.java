@@ -7,6 +7,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
+import net.zuperz.the_bog.item.ModItems;
+import net.zuperz.the_bog.loot.AddItemModifier;
 
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifierProvider(PackOutput output) {
@@ -15,9 +17,8 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        //add("soul_stone_sword_from_jungle_temple", new AddItemModifier(new LootItemCondition[] {
-        //        new LootTableIdCondition.Builder(new ResourceLocation("chests/jungle_temple")).build(),
-        //        LootItemRandomChanceCondition.randomChance(0.40f).build() }, ModItems.SOUL_STONE_SWORD.get()));
-
+        //add("mudstone_shard_from_simple_dungeon", new AddItemModifier(new LootItemCondition[] {
+        //        new LootTableIdCondition.Builder(new ResourceLocation("chests/simple_dungeon")).build(),
+        //        LootItemRandomChanceCondition.randomChance(0.45f).build() }, ModItems.MUDSTONE_SHARD.get()));
     }
 }

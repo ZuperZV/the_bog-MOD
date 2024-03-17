@@ -21,6 +21,8 @@ import net.minecraftforge.registries.RegistryObject;
 import net.zuperz.the_bog.The_Bog;
 import net.zuperz.the_bog.block.custom.ModFlammableRotatedPillarBlock;
 import net.zuperz.the_bog.block.custom.TheBogPortal;
+import net.zuperz.the_bog.block.custom.TheBogPortalHome;
+import net.zuperz.the_bog.block.custom.WetSlimeBlock;
 import net.zuperz.the_bog.block.custom.sign.ModHangingSignBlock;
 import net.zuperz.the_bog.block.custom.sign.ModStandingSignBlock;
 import net.zuperz.the_bog.block.custom.sign.ModWallHangingSignBlock;
@@ -38,6 +40,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> THE_BOG_PORTAL = registerBlock("the_bog_portal",
             () -> new TheBogPortal(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
+
+    public static final RegistryObject<Block> THE_HOME_PORTAL = registerBlock("the_home_portal",
+            () -> new TheBogPortalHome(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
+
+    public static final RegistryObject<Block> WET_SLIME_BLOCK = registerBlock("wet_slime_block",
+            () -> new WetSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> MUD_STONE = registerBlock("mud_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
@@ -202,7 +210,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> WEEPING_WILLOW_FENCE = registerBlock("weeping_willow_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)){
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)){
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -220,7 +228,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> WEEPING_WILLOW_FENCE_GATE = registerBlock("weeping_willow_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE){
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE){
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -272,7 +280,6 @@ public class ModBlocks {
                     return 5;
                 }
             });
-
 
     public static final RegistryObject<Block> WEEPING_WILLOW_SIGN = BLOCKS.register("weeping_willow_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).noOcclusion(), ModWoodTypes.WEEPING_WILLOW));

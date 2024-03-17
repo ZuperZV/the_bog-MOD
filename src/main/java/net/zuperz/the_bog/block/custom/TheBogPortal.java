@@ -1,5 +1,10 @@
 package net.zuperz.the_bog.block.custom;
 
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
@@ -15,6 +20,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.zuperz.the_bog.worldgen.dimension.ModDimensions;
 import net.zuperz.the_bog.worldgen.portal.ModTeleporter;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class TheBogPortal extends Block {
     public TheBogPortal(Properties pProperties) {
@@ -40,11 +48,20 @@ public class TheBogPortal extends Block {
             ServerLevel portalDimension = minecraftserver.getLevel(resourcekey);
             if (portalDimension != null && !player.isPassenger()) {
                 if(resourcekey == ModDimensions.THE_BOG_LEVEL_KEY) {
-                    player.changeDimension(portalDimension, new ModTeleporter(pPos, true));
-                } else {
                     player.changeDimension(portalDimension, new ModTeleporter(pPos, false));
                 }
             }
         }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        if(Screen.hasShiftDown()) {
+            pTooltip.add(Component.translatable("tooltip.the_bog.the_bog_portal.tooltip.shift"));
+        } else {
+            pTooltip.add(Component.translatable("tooltip.the_bog.the_bog_portal.tooltip"));
+        }
+
+        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 }

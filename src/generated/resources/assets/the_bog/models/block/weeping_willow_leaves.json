@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
     "all": "the_bog:block/weeping_willow_leaves"

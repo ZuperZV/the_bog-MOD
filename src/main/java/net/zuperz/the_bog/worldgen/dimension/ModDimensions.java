@@ -33,7 +33,7 @@ public class ModDimensions {
         context.register(THE_BOG_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
                 true, // hasSkylight
-                true, // hasCeiling
+                false, // hasCeiling
                 false, // ultraWarm
                 true, // natural
                 1.0, // coordinateScale
@@ -44,8 +44,8 @@ public class ModDimensions {
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                1.0f, // ambientLight
-                new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 5)));
+                0.1f, // ambientLight
+                new DimensionType.MonsterSettings(false, true, ConstantInt.of(0), 5)));
     }
 
     public static void bootstrapStem(BootstapContext<LevelStem> context) {
@@ -59,12 +59,14 @@ public class ModDimensions {
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
-                        new Climate.ParameterList<>(List.of(Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.BOG_WETLANDS)),
-                                Pair.of(Climate.parameters(0.1F, 0.2F, 0.0F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.TEST_BIOME_2)),
-                                Pair.of(Climate.parameters(0.1F, 0.2F, 0.0F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.BOG_WETLANDS)),
-                                Pair.of(Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN)),
-                                Pair.of(Climate.parameters(0.4F, 0.3F, 0.2F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.DARK_FOREST))
+                        new Climate.ParameterList<>(List.of(
+                                Pair.of(Climate.parameters(-1F, -1.4F, -1.2F, -1F, -1F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.SLIME_PLAINS)),
+                                Pair.of(Climate.parameters(-0.15F, -1F, -0.45F, -1F, 0.0F, -1.8F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.SUPERIOR_LAKES)),
+                                Pair.of(Climate.parameters(0.2F, 0.3F, 0.03F, -1F, 1F, -0.05F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.BOG_WETLANDS)),
+                                Pair.of(Climate.parameters(-0.3F, -1F, 0.3F, -1.2F, -1F, -1.7F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.ERODED_VALLEYS)),
+                                Pair.of(Climate.parameters(0.15F, 1F, 0.7F, 0.78F, 1F, 0.2F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.WARPED_CAVERNS)),
+                                Pair.of(Climate.parameters(-0.16F, 1.05F, 0.6F, 0.76F, 1F, 0.2F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.SWAMP_FOREST)),
+                                Pair.of(Climate.parameters(-0.19F, 1.03F, 0.7F, 0.59F, 1F, 0.269F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.MIRE_MARSH))
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 

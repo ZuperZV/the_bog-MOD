@@ -1,8 +1,11 @@
 package net.zuperz.the_bog.worldgen.biome;
 
+import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.zuperz.the_bog.The_Bog;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.worldgen.ModPlacedFeatures;
@@ -18,7 +21,18 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+import javax.annotation.Nullable;
+
+import static net.minecraft.world.level.levelgen.placement.BiomeFilter.biome;
+
 public class ModBiomes {
+    protected static final int NORMAL_WATER_COLOR = 4159204;
+    protected static final int NORMAL_WATER_FOG_COLOR = 329011;
+    private static final int OVERWORLD_FOG_COLOR = 12638463;
+    @Nullable
+    private static final Music NORMAL_MUSIC = null;
+
+
     public static final ResourceKey<Biome> TEST_BIOME = register("test_biome");
     public static final ResourceKey<Biome> TEST_BIOME_2 = register("test_biome_2");
 
@@ -30,19 +44,20 @@ public class ModBiomes {
     public static final ResourceKey<Biome> SWAMP_FOREST = register("swamp_forest");
     public static final ResourceKey<Biome> MIRE_MARSH = register("mire_marsh");
 
+
     public static void boostrap(BootstapContext<Biome> context) {
         context.register(TEST_BIOME, testBiome(context));
         context.register(TEST_BIOME_2, testBiome2(context));
 
         context.register(BOG_WETLANDS, bogWetlands(context));
-        /*
-        context.register(SUPERIOR_LAKES, testBiome(context));
+        context.register(SUPERIOR_LAKES, SuperiorLakes(context));
+
         context.register(SLIME_PLAINS, testBiome(context));
         context.register(ERODED_VALLEYS, testBiome(context));
         context.register(WARPED_CAVERNS, testBiome(context));
         context.register(SWAMP_FOREST, testBiome(context));
         context.register(MIRE_MARSH, testBiome(context));
-         */
+
 
     }
 
@@ -52,7 +67,19 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
-        BiomeDefaultFeatures.addSurfaceFreezing(builder);
+    }
+
+    private static BiomeGenerationSettings.Builder baseOceanGeneration(HolderGetter<PlacedFeature> pPlacedFeatures, HolderGetter<ConfiguredWorldCarver<?>> pWorldCarvers) {
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(pPlacedFeatures, pWorldCarvers);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addWaterTrees(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultGrass(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        return biomegenerationsettings$builder;
     }
 
     public static Biome testBiome2(BootstapContext<Biome> context) {
@@ -86,7 +113,7 @@ public class ModBiomes {
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.8f)
-                .temperature(0.7f)
+                .temperature(0.3f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
@@ -144,6 +171,48 @@ public class ModBiomes {
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.8f)
+                .temperature(0.3f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(6388580)
+                        .waterFogColor(2302743)
+                        .skyColor(0x73c262)
+                        .grassColorOverride(0x304d2c)
+                        .foliageColorOverride(0x304d2c)
+                        .fogColor(12638463)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                .build();
+    }
+
+    /* SUPERIOR_LAKES */
+    public static Biome SuperiorLakes(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
+        BiomeDefaultFeatures.addSwampClayDisk(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.KELP_COLD);
+        biomeBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.SILVER_ORE_PLACED_KEY);
+
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 4, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 3, 2, 5));
+
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP);
+
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.oceanSpawns(mobspawnsettings$builder, 1, 4, 10);
+        mobspawnsettings$builder.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 1, 1, 2));
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true) // Set to true to indicate the biome has precipitation (rain)
+                .downfall(0.6f)
                 .temperature(0.7f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
@@ -152,7 +221,7 @@ public class ModBiomes {
                         .waterFogColor(2302743)
                         .skyColor(0x73c262)
                         .grassColorOverride(0x304d2c)
-                        .foliageColorOverride(0x253a22)
+                        .foliageColorOverride(0x304d2c)
                         .fogColor(12638463)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
                 .build();

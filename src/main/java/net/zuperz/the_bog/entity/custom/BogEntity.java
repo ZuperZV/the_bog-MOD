@@ -6,12 +6,15 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -19,6 +22,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.ai.util.GoalUtils;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.monster.Husk;
@@ -35,6 +41,8 @@ import net.zuperz.the_bog.entity.ai.BogeAttackGoal;
 import net.zuperz.the_bog.entity.variant.BogeVariant;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Predicate;
+
 public class BogEntity extends Monster {
 
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
@@ -50,9 +58,17 @@ public class BogEntity extends Monster {
     public int attackAnimationTimeout = 0;
 
 
+    /* Zombie */
+    private static final Predicate<Difficulty> DOOR_BREAKING_PREDICATE = (p_34284_) -> {
+        return p_34284_ == Difficulty.HARD;
+    };
+    private final BreakDoorGoal breakDoorGoal = new BreakDoorGoal(this, DOOR_BREAKING_PREDICATE);
+    private boolean canBreakDoors;
+
     public BogEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
+
 
     protected void registerGoals() {
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -60,60 +76,21 @@ public class BogEntity extends Monster {
         this.goalSelector.addGoal(2, new BogeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
 
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(ZombifiedPiglin.class));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
-
     }
+
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes()
-                .add(Attributes.FOLLOW_RANGE, 35.0D)
+        return Animal.createLivingAttributes()
+                .add(Attributes.MAX_HEALTH, 35D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.23F)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.ARMOR, 2.0D)
-                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
-    }
-
-
-    protected boolean isSunSensitive() {
-        return true;
-    }
-
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.ZOMBIE_AMBIENT;
-    }
-
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.ZOMBIE_HURT;
-    }
-
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ZOMBIE_DEATH;
-    }
-
-    protected SoundEvent getStepSound() {
-        return SoundEvents.ZOMBIE_STEP;
-    }
-
-    public boolean doHurtTarget(Entity pEntity) {
-        boolean flag = super.doHurtTarget(pEntity);
-        if (flag && this.getMainHandItem().isEmpty() && pEntity instanceof LivingEntity) {
-            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            ((LivingEntity)pEntity).addEffect(new MobEffectInstance(ModEffects.STONE_WALL_EFFECT.get(), 20 * (int)f), this);
-        }
-
-        return flag;
-    }
-
-    protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
-        return this.isBaby() ? pSize.height * 0.85F : pSize.height * 0.92F;
-    }
-
-    protected ItemStack getSkull() {
-        return ItemStack.EMPTY;
+                .add(Attributes.FOLLOW_RANGE, 24D)
+                .add(Attributes.ARMOR_TOUGHNESS, 0.1f)
+                .add(Attributes.ATTACK_KNOCKBACK, 0.85f)
+                .add(Attributes.ATTACK_DAMAGE, 4f);
     }
 
     private void setupAnimationStates() {
@@ -125,7 +102,7 @@ public class BogEntity extends Monster {
         }
 
         if(this.isAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 10; // Length in ticks of your animation
+            attackAnimationTimeout = 8; // Length in ticks of your animation
             attackAnimationState.start(this.tickCount);
         } else {
             --this.attackAnimationTimeout;
@@ -163,6 +140,8 @@ public class BogEntity extends Monster {
     public boolean isAttacking() {
         return this.entityData.get(ATTACKING);
     }
+
+
 
 
     /* VARIANT */
@@ -204,5 +183,17 @@ public class BogEntity extends Monster {
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putInt("Variant", this.getTypeVariant());
+    }
+
+    /* Zombie */
+
+    public boolean doHurtTarget(Entity pEntity) {
+        boolean flag = super.doHurtTarget(pEntity);
+        if (flag && this.getMainHandItem().isEmpty() && pEntity instanceof LivingEntity) {
+            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+            ((LivingEntity)pEntity).addEffect(new MobEffectInstance(ModEffects.STONE_WALL_EFFECT.get(), 40 * (int)f), this);
+        }
+
+        return flag;
     }
 }

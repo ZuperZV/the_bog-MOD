@@ -28,7 +28,7 @@ public class BogeRenderer extends MobRenderer<BogEntity, BogeModel<BogEntity>> {
             });
 
     public BogeRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new BogeModel<>(pContext.bakeLayer(ModModelLayers.BOGE_LAYER)), 1.1f);
+        super(pContext, new BogeModel<>(pContext.bakeLayer(ModModelLayers.BOGE_LAYER)), 0.4f);
     }
 
     @Override

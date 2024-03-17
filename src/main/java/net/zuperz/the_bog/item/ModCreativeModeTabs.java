@@ -23,12 +23,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DUCK_FEATHER.get());
                         output.accept(ModItems.RAW_DUCK.get());
                         output.accept(ModItems.COOKED_DUCK.get());
+                        output.accept(ModItems.BOGGY_CHOPS.get());
+                        output.accept(ModItems.COOKED_BOGGY_CHOPS.get());
                         output.accept(ModItems.DUCK_EGG.get());
                         output.accept(ModItems.DUCK_SPAWN_EGG.get());
                         output.accept(ModItems.SUMPGET_SPAWN_EGG.get());
                         output.accept(ModItems.MARSH_LURKER_SPAWN_EGG.get());
                         output.accept(ModItems.BOGE_SPAWN_EGG.get());
+                        output.accept(ModItems.WET_SLIME_SPAWN_EGG.get());
+                        output.accept(ModItems.WET_SLIME_BALL.get());
                         output.accept(ModItems.BOGSKIN.get());
+                        output.accept(ModItems.RUBY.get());
                         output.accept(ModItems.RAW_SILVER.get());
                         output.accept(ModItems.SILVER.get());
                         output.accept(ModBlocks.SILVER_ORE.get());
@@ -75,6 +80,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ANDESITE_MUD_STONE.get());
 
                         output.accept(ModBlocks.THE_BOG_PORTAL.get());
+                        output.accept(ModBlocks.THE_HOME_PORTAL.get());
 
                         output.accept(ModItems.MARSH_LURKER_FLESH.get());
                         output.accept(ModItems.COOKED_MARSH_LURKER_FLESH.get());
