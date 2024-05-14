@@ -18,8 +18,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.THE_BOG_PORTAL);
-        blockWithItem(ModBlocks.THE_HOME_PORTAL);
 
         blockWithItem(ModBlocks.WEEPING_WILLOW_PLANKS);
 
@@ -30,10 +28,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.SILVER_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SILVER_ORE);
-
         blockWithItem(ModBlocks.RAW_SILVER_BLOCK);
         blockWithItem(ModBlocks.SILVER_BLOCK);
 
+        blockWithItem(ModBlocks.TITANIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.RAW_TITANIUM_BLOCK);
+        blockWithItem(ModBlocks.TITANIUM_BLOCK);
+
+        blockWithItem(ModBlocks.URANIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_URANIUM_ORE);
+        blockWithItem(ModBlocks.RAW_URANIUM_BLOCK);
+        blockWithItem(ModBlocks.URANIUM_BLOCK);
+        blockWithItem(ModBlocks.END_STONE_URANIUM_ORE);
+
+        simpleBlock(ModBlocks.STICK_GRASS.get(),
+                models().cross(blockTexture(ModBlocks.STICK_GRASS.get()).getPath(), blockTexture(ModBlocks.STICK_GRASS.get())).renderType("cutout"));
         simpleBlock(ModBlocks.BOG_GRASS.get(),
                 models().cross(blockTexture(ModBlocks.BOG_GRASS.get()).getPath(), blockTexture(ModBlocks.BOG_GRASS.get())).renderType("cutout"));
         simpleBlock(ModBlocks.MISTVEIL_BLOSSOM.get(),
@@ -63,6 +73,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_WEEPING_WILLOW_LOG);
         blockItem(ModBlocks.STRIPPED_WEEPING_WILLOW_WOOD);
 
+        blockWithItem(ModBlocks.BLACK_SAND);
 
         leavesBlock(ModBlocks.WEEPING_WILLOW_LEAVES);
         saplingBlock(ModBlocks.WEEPING_WILLOW_SAPLING);
@@ -79,8 +90,39 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         hangingSignBlock(ModBlocks.WEEPING_WILLOW_HANGING_SIGN.get(), ModBlocks.WEEPING_WILLOW_WALL_HANGING_SIGN.get(),
                 blockTexture(ModBlocks.WEEPING_WILLOW_PLANKS.get()));
-    }
 
+
+
+        logBlock(((RotatedPillarBlock) ModBlocks.REINFORCED_MUD.get()));
+        blockItem(ModBlocks.REINFORCED_MUD);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.REINFORCED_MUD_BRICKS.get()));
+        blockItem(ModBlocks.REINFORCED_MUD_BRICKS);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.MOSSY_REINFORCED_MUD_BRICKS.get()));
+        blockItem(ModBlocks.MOSSY_REINFORCED_MUD_BRICKS);
+
+        blockWithItem(ModBlocks.SMALL_MUD_BRICKS);
+        blockWithItem(ModBlocks.LUMINA);
+
+        stairsBlock((StairBlock) ModBlocks.SMALL_MUD_BRICKS_STAIRS.get(), blockTexture(ModBlocks.SMALL_MUD_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.SMALL_MUD_BRICKS_SLAB.get()), blockTexture(ModBlocks.SMALL_MUD_BRICKS.get()), blockTexture(ModBlocks.SMALL_MUD_BRICKS.get()));
+
+        blockItem(ModBlocks.SMALL_MUD_BRICKS_STAIRS);
+        blockItem(ModBlocks.SMALL_MUD_BRICKS_SLAB);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.SMALL_MUD_BRICKS_PILLAR.get()));
+        blockItem(ModBlocks.SMALL_MUD_BRICKS_PILLAR);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.SMALL_LUMINA_MUD_BRICKS_PILLAR.get()));
+        blockItem(ModBlocks.SMALL_LUMINA_MUD_BRICKS_PILLAR);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.SMALL_MUD_BRICKS_COLUMN.get()));
+        blockItem(ModBlocks.SMALL_MUD_BRICKS_COLUMN);
+
+        wallBlock((WallBlock) ModBlocks.SMALL_MUD_BRICKS_WALL.get(), blockTexture(ModBlocks.SMALL_MUD_BRICKS.get()));
+
+    }
     public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
         hangingSignBlock(signBlock, wallSignBlock, sign);

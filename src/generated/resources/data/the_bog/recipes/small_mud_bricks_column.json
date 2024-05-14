@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:mud"
+    },
+    "B": {
+      "item": "the_bog:small_mud_bricks"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "AAA",
+    "BAB"
+  ],
+  "result": {
+    "item": "the_bog:small_mud_bricks_column"
+  },
+  "show_notification": true
+}

@@ -1,7 +1,10 @@
-// 1.20.1	2024-03-04T20:35:45.6219255	Item Tags
+// 1.20.1	2024-04-19T23:06:12.8906901	Item Tags
 27ddba9685755a996b8dcb5ef78727d7591b2e94 data/minecraft/tags/items/logs_that_burn.json
 72c920ccc998566f0f04ec83fa3629ef1cb553a5 data/minecraft/tags/items/planks.json
 8de89de6c432337581fa7b3341427a8cb8150778 data/minecraft/tags/items/stone_tool_materials.json
-b7629afa2587351b24722bc3d11ea8365044c1df data/minecraft/tags/items/trimmable_armor.json
+8ba3e4081819be4cd3893af3aef28051aa150d37 data/minecraft/tags/items/trimmable_armor.json
 d5ae377df4168a1343b81108602e393a5fcbd40d data/the_bog/tags/items/bog_leather.json
+b6f40dca7fed8c5222c68b5aa9d2b08e1de9e6b2 data/the_bog/tags/items/ores/silver.json
+c9bddfeb4839ed885b81e38472c8f333e5108d33 data/the_bog/tags/items/ores/titanium.json
+e3e564ae73de15fdf039083aaf2baa4a413c3520 data/the_bog/tags/items/ores/uranium.json
 a84d983bd14f496e0e3d3a42494b1fbcba52621e data/the_bog/tags/items/silver_diamond.json

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "the_bog:bogblossom_bow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wet_slime_ball": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "the_bog:bog_leather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wet_slime_ball",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "the_bog:bogblossom_bow"
+    ]
+  },
+  "sends_telemetry_event": false
+}

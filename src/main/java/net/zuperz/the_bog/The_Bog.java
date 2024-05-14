@@ -26,6 +26,7 @@ import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.effect.ModEffects;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Boge.BogeRenderer;
+import net.zuperz.the_bog.entity.client.Dark_Skeleton.Dark_skeletonRenderer;
 import net.zuperz.the_bog.entity.client.Duck.DuckRenderer;
 import net.zuperz.the_bog.entity.client.Marsh_Lurker.Marsh_LurkerRenderer;
 import net.zuperz.the_bog.entity.client.ModBoatRenderer;
@@ -41,6 +42,8 @@ import net.zuperz.the_bog.potion.BetterBrewingRecipe;
 import net.zuperz.the_bog.potion.ModPotions;
 import net.zuperz.the_bog.util.ModWoodTypes;
 import net.zuperz.the_bog.villager.ModVillagers;
+import net.zuperz.the_bog.worldgen.ModBiomeModifiers;
+import net.zuperz.the_bog.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -56,7 +59,6 @@ public class The_Bog {
         ModBlocks.register(modEventBus);
 
         ModEntities.register(modEventBus);
-
         ModVillagers.register(modEventBus);
 
         ModFluidTypes.register(modEventBus);
@@ -69,6 +71,7 @@ public class The_Bog {
         ModPotions.register(modEventBus);
 
         ModParticles.register(modEventBus);
+        ModTrunkPlacerTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -108,6 +111,7 @@ public class The_Bog {
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.WEEPING_WILLOW);
+                Sheets.addWoodType(ModWoodTypes.MIDNIGHT);
 
                 ModItemProperties.addCustomItemProperties();
 
@@ -116,6 +120,8 @@ public class The_Bog {
                 EntityRenderers.register(ModEntities.SUMPGET.get(), SumpgetRenderer::new);
                 EntityRenderers.register(ModEntities.MARSH_LURKER.get(), Marsh_LurkerRenderer::new);
                 EntityRenderers.register(ModEntities.WET_SLIME.get(), WetSlimeRenderer::new);
+
+                EntityRenderers.register(ModEntities.DARK_SKELETON.get(), Dark_skeletonRenderer::new);
 
                 EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
                 EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));

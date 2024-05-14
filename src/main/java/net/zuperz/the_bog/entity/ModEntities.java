@@ -21,8 +21,8 @@ public class ModEntities {
             ENTITY_TYPES.register("boge", () -> EntityType.Builder.of(BogEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F).build("boge"));
 
-    public static final RegistryObject<EntityType<Marsh_LurkerEntity>> MARSH_LURKER =
-            ENTITY_TYPES.register("marsh_lurker", () -> EntityType.Builder.of(Marsh_LurkerEntity::new, MobCategory.MONSTER)
+    public static final RegistryObject<EntityType<MarshLurkerEntity>> MARSH_LURKER =
+            ENTITY_TYPES.register("marsh_lurker", () -> EntityType.Builder.of(MarshLurkerEntity::new, MobCategory.MONSTER)
                     .sized(1.0f, 0.8f).build("marsh_lurker"));
 
     public static final RegistryObject<EntityType<SumpgetEntity>> SUMPGET =
@@ -30,8 +30,12 @@ public class ModEntities {
                     .sized(0.9F, 1.3F).build("sumpget"));
 
     public static final RegistryObject<EntityType<WetSlimeEntity>> WET_SLIME =
-            ENTITY_TYPES.register("wet_slime", () -> EntityType.Builder.of(WetSlimeEntity::new, MobCategory.CREATURE)
+            ENTITY_TYPES.register("wet_slime", () -> EntityType.Builder.of(WetSlimeEntity::new, MobCategory.MONSTER)
                     .sized(1.9F, 1.9F).build("wet_slime"));
+
+    public static final RegistryObject<EntityType<DarkskeletonEntity>> DARK_SKELETON =
+            ENTITY_TYPES.register("dark_skeleton", () -> EntityType.Builder.of(DarkskeletonEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.99F).build("dark_skeleton"));
 
 
 

@@ -38,6 +38,9 @@ public class ModBoatEntity extends Boat {
             case WEEPING_WILLOW -> {
                 return ModItems.WEEPING_WILLOW_BOAT.get();
             }
+            case MIDNIGHT -> {
+                return ModItems.MIDNIGHT_BOAT.get();
+            }
         }
         return super.getDropItem();
     }
@@ -53,6 +56,7 @@ public class ModBoatEntity extends Boat {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, Type.WEEPING_WILLOW.ordinal());
+        this.entityData.define(DATA_ID_TYPE, Type.MIDNIGHT.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
@@ -66,7 +70,9 @@ public class ModBoatEntity extends Boat {
     }
 
     public static enum Type implements StringRepresentable {
-        WEEPING_WILLOW(ModBlocks.WEEPING_WILLOW_PLANKS.get(), "weeping_willow");
+        WEEPING_WILLOW(ModBlocks.WEEPING_WILLOW_PLANKS.get(), "weeping_willow"),
+
+        MIDNIGHT(ModBlocks.MIDNIGHT_PLANKS.get(), "midnight");
 
         private final String name;
         private final Block planks;

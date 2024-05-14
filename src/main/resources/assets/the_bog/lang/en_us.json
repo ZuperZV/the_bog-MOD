@@ -1,16 +1,37 @@
 {
   "creativetab.bog_tab": "The Bog Tab",
   "creativetab.bog_armor_tab": "Bog Armor Tab",
+  "creativetab.the_bog_boss_tab": "The Bog Boss Tab",
+
+  "item.the_bog.mud_stone_and_steel": "Mud Stone And Steel",
 
   "block.the_bog.the_bog_portal": "The Bog Portal",
   "item.the_bog.duck_spawn_egg": "Duck Spawn Egg",
   "item.the_bog.sumpget_spawn_egg": "Sumpget Spawn Egg",
+  "item.the_bog.dark_skeleton_spawn_egg": "Dark Skeleton Spawn Egg",
+
   "item.the_bog.raw_duck": "Raw Duck",
   "item.the_bog.duck_feather": "Duck Feather",
   "item.the_bog.duck_egg": "Duck Egg",
 
   "item.the_bog.bogganium_ingot": "Bogganium Ingot",
   "item.the_bog.bogskin": "Bogskin",
+
+  "item.the_bog.uranium": "Uranium",
+  "block.the_bog.uranium_block": "Uranium Block",
+  "block.the_bog.uranium_ore": "Uranium Ore",
+  "block.the_bog.deepslate_uranium_ore": "Deepslate Uranium Ore",
+  "item.the_bog.raw_uranium": "Raw Uranium",
+  "block.the_bog.raw_uranium_block": "Raw Uranium Block",
+  "block.the_bog.end_stone_uranium_ore": "End Stone Uranium Ore",
+
+  "item.the_bog.titanium": "Titanium",
+  "item.the_bog.titanium_nugget": "Titanium Nugget",
+  "block.the_bog.titanium_block": "Titanium Block",
+  "block.the_bog.titanium_ore": "Titanium Ore",
+  "block.the_bog.deepslate_titanium_ore": "Deepslate Titanium Ore",
+  "item.the_bog.raw_titanium": "Raw Titanium",
+  "block.the_bog.raw_titanium_block": "Raw Titanium Block",
 
   "item.the_bog.bogblossom_bow": "Bogblossom Bow",
   "item.the_bog.diamond_bogblossom_bow": "Diamond Bogblossom Bow",
@@ -78,6 +99,18 @@
   "item.the_bog.silver_hoe": "Silver Hoe",
   "item.the_bog.silver_paxel": "Silver Paxel",
 
+  "item.the_bog.titanium_sword": "Titanium Sword",
+  "item.the_bog.titanium_pickaxe": "Titanium Pickaxe",
+  "item.the_bog.titanium_shovel": "Titanium Shovel",
+  "item.the_bog.titanium_axe": "Titanium Axe",
+  "item.the_bog.titanium_hoe": "Titanium Hoe",
+  "item.the_bog.titanium_paxel": "Titanium Paxel",
+
+  "item.the_bog.titanium_helmet": "Titanium Helmet",
+  "item.the_bog.titanium_chestplate": "Titanium Chestplate",
+  "item.the_bog.titanium_leggings": "Titanium Leggings",
+  "item.the_bog.titanium_boots": "Titanium Boots",
+
   "item.the_bog.bogganium_helmet": "Bogganium Helmet",
   "item.the_bog.bogganium_chestplate": "Bogganium Chestplate",
   "item.the_bog.bogganium_leggings": "Bogganium Leggings",
@@ -88,10 +121,25 @@
   "item.the_bog.bogwalker_leggings": "Bogwalker Leggings",
   "item.the_bog.bogwalker_boots": "Bogwalker Boots",
 
+  "item.the_bog.uranium_sword": "Uranium Sword",
+  "item.the_bog.uranium_pickaxe": "Uranium Pickaxe",
+  "item.the_bog.uranium_shovel": "Uranium Shovel",
+  "item.the_bog.uranium_axe": "Uranium Axe",
+  "item.the_bog.uranium_hoe": "Uranium Hoe",
+  "item.the_bog.uranium_paxel": "Uranium Paxel",
+
+  "item.the_bog.uranium_helmet": "Uranium Helmet",
+  "item.the_bog.uranium_chestplate": "Uranium Chestplate",
+  "item.the_bog.uranium_leggings": "Uranium Leggings",
+  "item.the_bog.uranium_boots": "Uranium Boots",
+
   "item.the_bog.silver_helmet": "Silver Helmet",
   "item.the_bog.silver_chestplate": "Silver Chestplate",
   "item.the_bog.silver_leggings": "Silver Leggings",
   "item.the_bog.silver_boots": "Silver Boots",
+
+  "item.the_bog.dark_bone_sword": "Dark Bone Sword",
+  "item.the_bog.dark_bone": "Dark Bone",
 
   "block.the_bog.silver_ore": "Silver Ore",
   "block.the_bog.deepslate_silver_ore": "Deepslate Silver Ore",
@@ -109,6 +157,11 @@
   "block.the_bog.mud_stone_bricks": "Mud Stone Bricks",
   "block.the_bog.andesite_mud_stone": "Mud Andesite",
 
+  "item.the_bog.silver_diamond_horse_armor": "Silver Diamond Horse Armor",
+  "item.the_bog.bogganium_horse_armor": "Bogganium Horse Armor",
+  "item.the_bog.bogwalker_horse_armor": "Bogwalker Horse Armor",
+  "item.the_bog.silver_horse_armor": "Silver Horse Armor",
+
   "item.the_bog.silver": "Silver",
   "item.the_bog.raw_silver": "Raw Silver",
 
@@ -122,8 +175,11 @@
   "item.the_bog.wet_slime_spawn_egg": "Wet Slime Spawn Egg",
   "item.the_bog.boge_spawn_egg": "Boge Spawn Egg",
 
+  "block.the_bog.wet_slime_block": "Wet Slime Block",
+
   "entity.the_bog.wet_slime": "Wet Slime",
   "entity.the_bog.marsh_lurker": "Marsh Lurker",
+  "entity.the_bog.dark_skeleton": "Dark Skeleton",
 
   "effect.the_bog.stone_wall_effect": "Stone Wall",
 
@@ -160,12 +216,30 @@
   "item.the_bog.smithing_template.bogganium_upgrade.applies_to": "Diamond Equipment",
   "item.the_bog.smithing_template.bogganium_upgrade.ingredients": "Bogganium Ingot",
 
+  "block.the_bog.reinforced_mud": "Reinforced Mud",
+  "block.the_bog.mossy_reinforced_mud_bricks": "Mossy Reinforced Mud Bricks",
+  "block.the_bog.reinforced_mud_bricks": "Reinforced Mud Bricks",
+  "block.the_bog.mud_lodestone": "Mud Lodestone",
+
+  "block.the_bog.small_mud_bricks_stairs": "Small Mud Bricks Stairs",
+  "block.the_bog.small_mud_bricks_slab": "Small Mud Bricks Slab",
+
+  "block.the_bog.black_sand": "Black Sand",
+  "block.the_bog.suspicious_black_sand": "Suspicious Black Sand",
+
+  "block.the_bog.small_mud_bricks_wall": "Small Mud Bricks Wall",
+  "block.the_bog.small_mud_bricks": "Small Mud Bricks",
+  "block.the_bog.small_mud_bricks_pillar": "Small Mud Bricks Pillar",
+  "block.the_bog.small_lumina_mud_bricks_pillar": "Small Lumina Mud Bricks Pillar",
+  "block.the_bog.small_mud_bricks_column": "Small Mud Bricks Column",
+  "block.the_bog.lumina": "Lumina",
+
   "tooltip.the_bog.boggaium_bucket.tooltip.shift": "Fill a bucket with boggium fluid that spawns in The Bog Dimension",
   "tooltip.the_bog.boggaium_bucket.tooltip": "Press §eSHIFT§r for more Information",
 
-  "tooltip.the_bog.the_bog_portal.tooltip.shift": "Gets you to the Bog Dimension and back",
+  "tooltip.the_bog.the_bog_portal.tooltip.shift": "Gets you to the Bog Dimension, but how du you get back?",
   "tooltip.the_bog.the_bog_portal.tooltip": "Press §eSHIFT§r for more Information",
 
-  "tooltip.the_bog.the_bog_portal_home.tooltip.shift": "Gets you to the Bog Dimension, but how du you get back?",
+  "tooltip.the_bog.the_bog_portal_home.tooltip.shift": "Gets you to the Bog Dimension and back",
   "tooltip.the_bog.the_bog_portal_home.tooltip": "Press §eSHIFT§r for more Information"
 }

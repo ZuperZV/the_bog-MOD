@@ -19,6 +19,7 @@ import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.block.custom.entity.ModBlockEntities;
 import net.zuperz.the_bog.entity.ModEntities;
 import net.zuperz.the_bog.entity.client.Boge.BogeModel;
+import net.zuperz.the_bog.entity.client.Dark_Skeleton.Dark_skeletonModel;
 import net.zuperz.the_bog.entity.client.Duck.DuckModel;
 import net.zuperz.the_bog.entity.client.Marsh_Lurker.Marsh_LurkerModel;
 import net.zuperz.the_bog.entity.client.Sumpget.SumpgetModel;
@@ -26,6 +27,7 @@ import net.zuperz.the_bog.entity.client.wet_slime.wetslimeModel;
 import net.zuperz.the_bog.entity.custom.*;
 import net.zuperz.the_bog.entity.layers.ModModelLayers;
 import net.zuperz.the_bog.particles.ModParticles;
+import net.zuperz.the_bog.particles.TheBogPortalParticle;
 import net.zuperz.the_bog.particles.WetSlimeParticles;
 
 @Mod.EventBusSubscriber(modid = The_Bog.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -33,6 +35,7 @@ public class ModEventBusEvensts {
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ModParticles.WETSLIME_PARTICLES.get(), WetSlimeParticles.Provider::new);
+        event.registerSpriteSet(ModParticles.BOG_PORTAL_PARTICLES.get(), TheBogPortalParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -43,18 +46,26 @@ public class ModEventBusEvensts {
         event.registerLayerDefinition(ModModelLayers.BOGE_LAYER, BogeModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.WETSLIME_LAYER, wetslimeModel::createBodyLayer);
 
+        event.registerLayerDefinition(ModModelLayers.DARK_SKELETON_LAYER, Dark_skeletonModel::createBodyLayer);
+
         event.registerLayerDefinition(ModModelLayers.WETSLIME_OUTER, wetslimeModel::createOuterBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.WEEPING_WILLOW_BOAT_LAYER, BoatModel::createBodyModel);
-        event.registerLayerDefinition(ModModelLayers.WEEPING_CHEST_WILLOW_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(ModModelLayers.WEEPING_WILLOW_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
+
+        event.registerLayerDefinition(ModModelLayers.MIDNIGHT_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(ModModelLayers.MIDNIGHT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.BOGE.get(), BogEntity.createAttributes().build());
         event.put(ModEntities.DUCK.get(), DuckEntity.createAttributes().build());
         event.put(ModEntities.SUMPGET.get(), SumpgetEntity.createAttributes().build());
-        event.put(ModEntities.MARSH_LURKER.get(), Marsh_LurkerEntity.createAttributes().build());
+        event.put(ModEntities.MARSH_LURKER.get(), MarshLurkerEntity.createAttributes().build());
         event.put(ModEntities.WET_SLIME.get(), WetSlimeEntity.createAttributes().build());
+
+        event.put(ModEntities.DARK_SKELETON.get(), DarkskeletonEntity.createAttributes().build());
     }
 
     @SubscribeEvent

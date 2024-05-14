@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:string"
+    },
+    "B": {
+      "item": "the_bog:wet_slime_ball"
+    }
+  },
+  "pattern": [
+    "AA ",
+    "AB ",
+    "  A"
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:lead"
+  },
+  "show_notification": true
+}

@@ -23,12 +23,28 @@ public class ModModelLayers {
     public static final ModelLayerLocation MARSH_LURKER_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "marsh_lurker_layer"), "marsh_lurker_layer");
 
+    public static final ModelLayerLocation DARK_SKELETON_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "dark_skeleton_layer"), "dark_skeleton_layer");
+
+    public static final ModelLayerLocation DARK_SKELETON_INNER_ARMOR = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "dark_skeleton_layer"), "inner");
+
+    public static final ModelLayerLocation DARK_SKELETON_OUTER_ARMOR = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "dark_skeleton_layer"), "outer");
+
+
 
     /* Boat */
 
     public static final ModelLayerLocation WEEPING_WILLOW_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "boat/weeping_willow"), "main");
 
-    public static final ModelLayerLocation WEEPING_CHEST_WILLOW_BOAT_LAYER = new ModelLayerLocation(
+    public static final ModelLayerLocation WEEPING_WILLOW_CHEST_BOAT_LAYER = new ModelLayerLocation(
             new ResourceLocation(The_Bog.MOD_ID, "chest_boat/weeping_willow"), "main");
+
+    public static final ModelLayerLocation MIDNIGHT_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "boat/midnight"), "main");
+
+    public static final ModelLayerLocation MIDNIGHT_CHEST_BOAT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(The_Bog.MOD_ID, "chest_boat/midnight"), "main");
 }

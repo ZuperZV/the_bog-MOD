@@ -6,7 +6,7 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.8,
+  "downfall": 0.0,
   "effects": {
     "fog_color": 2269670,
     "foliage_color": 13763580,
@@ -56,6 +56,10 @@
     ],
     [
       "minecraft:glow_lichen",
+      "minecraft:flower_swamp",
+      "minecraft:patch_grass_normal",
+      "minecraft:patch_dead_bush",
+      "minecraft:patch_grass_plain",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
@@ -79,7 +83,7 @@
       {
         "type": "the_bog:duck",
         "maxCount": 4,
-        "minCount": 4,
+        "minCount": 1,
         "weight": 5
       },
       {

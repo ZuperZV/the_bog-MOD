@@ -2,6 +2,7 @@
 package net.zuperz.the_bog.datagen;
 
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.zuperz.the_bog.The_Bog;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -34,6 +35,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private static final List<ItemLike> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER.get(),
             ModBlocks.SILVER_ORE.get(), ModBlocks.DEEPSLATE_SILVER_ORE.get());
 
+    private static final List<ItemLike> TITANIUM_SMELTABLES = List.of(ModItems.RAW_TITANIUM.get(),
+            ModBlocks.TITANIUM_ORE.get(), ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
+
+    private static final List<ItemLike> URANIUM_SMELTABLES = List.of(ModItems.RAW_URANIUM.get(),
+            ModBlocks.URANIUM_ORE.get(), ModBlocks.DEEPSLATE_URANIUM_ORE.get());
+
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
@@ -47,6 +54,82 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, SILVER_SMELTABLES, RecipeCategory.MISC, ModItems.SILVER.get(), 0.25f, 200, "silver");
         oreBlasting(pWriter, SILVER_SMELTABLES, RecipeCategory.MISC, ModItems.SILVER.get(), 0.25f, 100, "silver");
 
+        oreSmelting(pWriter, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM.get(), 0.25f, 200, "titanium");
+        oreBlasting(pWriter, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM.get(), 0.25f, 100, "titanium");
+
+        oreSmelting(pWriter, URANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.URANIUM.get(), 0.25f, 200, "uranium");
+        oreBlasting(pWriter, URANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.URANIUM.get(), 0.25f, 100, "uranium");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE.get())
+                .pattern("CAC")
+                .pattern("CBC")
+                .pattern("CCC")
+                .define('A', ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE.get())
+                .define('B', ModBlocks.MUD_STONE.get())
+                .define('C', ModItems.TITANIUM.get())
+                .unlockedBy("bogganium_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModItems.BOGGANIUM_UPGRADE_SMITHING_TEMPLATE.get()).build()))
+                .save(pWriter, new ResourceLocation(The_Bog.MOD_ID, "bogganium_upgrade_smithing_template"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MUD_STONE_AND_STEEL.get())
+                .requires(ModItems.SILVER.get())
+                .requires(ModItems.MUDSTONE_SHARD.get())
+                .unlockedBy("mud_stone_and_steel", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModItems.MUD_STONE_AND_STEEL.get()).build()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.REINFORCED_MUD_BRICKS.get())
+                .pattern("BAB")
+                .pattern("BAB")
+                .pattern("BAB")
+                .define('B', Blocks.MUD_BRICKS)
+                .define('A', Blocks.PACKED_MUD)
+                .unlockedBy("has_packed_mud", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(Blocks.PACKED_MUD).build()))
+                .save(pWriter, new ResourceLocation(The_Bog.MOD_ID, "reinforced_mud_bricks"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.REINFORCED_MUD.get())
+                .pattern("BAB")
+                .pattern("BAB")
+                .pattern("BAB")
+                .define('B', Blocks.MUD_BRICKS)
+                .define('A', Blocks.MUD)
+                .unlockedBy("has_mud", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(Blocks.MUD).build()))
+                .save(pWriter, new ResourceLocation(The_Bog.MOD_ID, "reinforced_mud"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.MOSSY_REINFORCED_MUD_BRICKS.get())
+                .requires(ModBlocks.REINFORCED_MUD_BRICKS.get())
+                .requires(Blocks.MOSS_BLOCK)
+                .unlockedBy("has_reinforced_mud_bricks", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ModBlocks.REINFORCED_MUD_BRICKS.get()).build()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MUD_LODESTONE.get())
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('A', Blocks.LODESTONE)
+                .define('B', Blocks.MUD)
+                .unlockedBy("has_lodestone", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(Blocks.LODESTONE).build()))
+                .save(pWriter);
+
+
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.RAW_URANIUM.get(), RecipeCategory.MISC, ModBlocks.RAW_URANIUM_BLOCK.get(),
+                "the_bog:raw_uranium", "uranium","the_bog:raw_uranium_block", "uranium");
+
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.URANIUM.get(), RecipeCategory.MISC, ModBlocks.URANIUM_BLOCK.get(),
+                "the_bog:uranium", "uranium","the_bog:uranium_block", "uranium");
+
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.RAW_TITANIUM.get(), RecipeCategory.MISC, ModBlocks.RAW_TITANIUM_BLOCK.get(),
+                "the_bog:raw_titanium", "titanium","the_bog:raw_titanium_block", "titanium");
+
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.TITANIUM.get(), RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(),
+                "the_bog:titanium", "titanium","the_bog:titanium_block", "titanium");
+
+        nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), RecipeCategory.MISC, ModItems.TITANIUM.get(),
+                "the_bog:titanium_from_titanium_nugget", "titanium","the_bog:titanium_nugget", "titanium");
 
         SimpleCookingRecipeBuilder.smelting (Ingredient.of(ModItems.RAW_DUCK.get()), RecipeCategory.MISC , ModItems.COOKED_DUCK.get(), 0.15f , 100)
                 .unlockedBy("has_raw_duck",inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.RAW_DUCK.get()).build()))
@@ -185,14 +268,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         of(ModItems.WEEPING_WILLOW_BOAT.get()).build()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.BOGWALKER_HELMET.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGWALKER_HELMET.get())
                 .pattern("AAA")
                 .pattern("A A")
                 .define('A', ModTags.Items.BOG_LEATHER)
                 .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.BOGWALKER_CHESTPLATE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGWALKER_CHESTPLATE.get())
                 .pattern("A A")
                 .pattern("AAA")
                 .pattern("AAA")
@@ -200,7 +283,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.BOGWALKER_LEGGINGS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGWALKER_LEGGINGS.get())
                 .pattern("AAA")
                 .pattern("A A")
                 .pattern("A A")
@@ -208,11 +291,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.BOGWALKER_BOOTS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGWALKER_BOOTS.get())
                 .pattern("A A")
                 .pattern("A A")
                 .define('A', ModTags.Items.BOG_LEATHER)
                 .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGWALKER_HORSE_ARMOR.get())
+                .pattern("A A")
+                .pattern("AAA")
+                .pattern("A A")
+                .define('A', ModTags.Items.BOG_LEATHER)
+                .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WET_SLIME_BLOCK.get())
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModItems.WET_SLIME_BALL.get())
+                .unlockedBy("has_bogleather", has(ModTags.Items.BOG_LEATHER))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.LEAD, 3)
+                .pattern("AA ")
+                .pattern("AB ")
+                .pattern("  A")
+                .define('A', Items.STRING)
+                .define('B', ModItems.WET_SLIME_BALL.get())
+                .unlockedBy("has_wet_slime_ball", has(ModTags.Items.BOG_LEATHER))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BOGBLOSSOM_BOW.get())
+                .pattern(" BA")
+                .pattern("C A")
+                .pattern(" BA")
+                .define('A', Items.STRING)
+                .define('B', Items.STICK)
+                .define('C', ModTags.Items.BOG_LEATHER)
+                .unlockedBy("has_wet_slime_ball", has(ModTags.Items.BOG_LEATHER))
                 .save(pWriter);
 
         //SmithingTransformRecipeBuilder.smithing(template, item to upgrade, upgradeitem, category, result)
@@ -365,6 +482,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModItems.SILVER.get())
                 .unlockedBy("has_silver", has(ModItems.SILVER.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SILVER_SHOVEL.get())
+                .pattern(" B")
+                .pattern(" A")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.SILVER.get())
+                .unlockedBy("has_silver", has(ModItems.SILVER.get()))
+                .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SILVER_PAXEL.get())
                 .pattern("BBB")
                 .pattern("BA ")
@@ -399,6 +524,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModItems.MUDSTONE_SHARD.get())
                 .unlockedBy("has_silver", has(ModItems.MUDSTONE_SHARD.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.MUDSTONE_SHOVEL.get())
+                .pattern(" B")
+                .pattern(" A")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.MUDSTONE_SHARD.get())
+                .unlockedBy("has_silver", has(ModItems.MUDSTONE_SHARD.get()))
+                .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.MUDSTONE_HOE.get())
                 .pattern("BB")
                 .pattern(" A")
@@ -416,7 +549,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_silver", has(ModItems.MUDSTONE_SHARD.get()))
                 .save(pWriter);
 
-        /* Silver Dimond */
+        /* Silver Diamond */
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SILVER_DIAMOND_SWORD.get())
                 .pattern("C")
                 .pattern("B")
@@ -447,6 +580,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SILVER_DIAMOND_HOE.get())
                 .pattern("BC")
                 .pattern(" A")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('C', Items.DIAMOND)
+                .define('B', ModItems.SILVER.get())
+                .unlockedBy("has_silver", has(ModTags.Items.SILVER_DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.SILVER_DIAMOND_SHOVEL.get())
+                .pattern(" B")
+                .pattern(" C")
                 .pattern(" A")
                 .define('A', Items.STICK)
                 .define('C', Items.DIAMOND)
@@ -488,6 +630,79 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         Ingredient.of(ModItems.BOGGANIUM_INGOT.get()), RecipeCategory.COMBAT, ModItems.BOGGANIUM_PAXEL.get()).
                 unlocks("has_bogganium_ingot", has(ModItems.BOGGANIUM_INGOT.get())).save(pWriter, new ResourceLocation(The_Bog.MOD_ID, "boggaium_paxel"));
 
+
+        /* Titanium */
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_SWORD.get())
+                .pattern("B")
+                .pattern("B")
+                .pattern("A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_PICKAXE.get())
+                .pattern("BBB")
+                .pattern(" A ")
+                .pattern(" A ")
+                .define('A', Items.STICK)
+                .define('B', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_AXE.get())
+                .pattern("BB")
+                .pattern("BA")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_HOE.get())
+                .pattern("BB")
+                .pattern(" A")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_SHOVEL.get())
+                .pattern(" B")
+                .pattern(" A")
+                .pattern(" A")
+                .define('A', Items.STICK)
+                .define('B', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_HELMET.get())
+                .pattern("AAA")
+                .pattern("A A")
+                .define('A', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_CHESTPLATE.get())
+                .pattern("A A")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_LEGGINGS.get())
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TITANIUM_BOOTS.get())
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', ModItems.TITANIUM.get())
+                .unlockedBy("has_titanium", has(ModItems.TITANIUM.get()))
+                .save(pWriter);
+
         /* Misc */
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.DIAMOND_PAXEL.get())
                 .pattern("BBB")
@@ -496,6 +711,57 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.STICK)
                 .define('B', Items.DIAMOND)
                 .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter);
+
+
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMALL_MUD_BRICKS_SLAB.get(), Ingredient.of(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .group("slab")
+                .unlockedBy(getHasName(ModBlocks.SMALL_MUD_BRICKS.get()), has(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .save(pWriter);
+
+        stairBuilder(ModBlocks.SMALL_MUD_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .unlockedBy("has_small_mud_bricks", has(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_MUD_BRICKS_WALL.get(), 3)
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModBlocks.SMALL_MUD_BRICKS.get())
+                .unlockedBy("has_small_mud_bricks", has(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.SMALL_MUD_BRICKS.get(), 4)
+                .requires(Blocks.MUD, 4)
+                .unlockedBy("has_mud", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(Blocks.MUD).build()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_LUMINA_MUD_BRICKS_PILLAR.get())
+                .pattern("CCC")
+                .pattern("BAB")
+                .pattern("CCC")
+                .define('A', ModBlocks.LUMINA.get())
+                .define('B', Blocks.MUD)
+                .define('C', ModBlocks.SMALL_MUD_BRICKS.get())
+                .unlockedBy("has_small_mud_bricks ", has(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_MUD_BRICKS_PILLAR.get())
+                .pattern("BBB")
+                .pattern("AAA")
+                .pattern("BBB")
+                .define('A', Blocks.MUD)
+                .define('B', ModBlocks.SMALL_MUD_BRICKS.get())
+                .unlockedBy("has_small_mud_bricks ", has(ModBlocks.SMALL_MUD_BRICKS.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SMALL_MUD_BRICKS_COLUMN.get())
+                .pattern("BAB")
+                .pattern("AAA")
+                .pattern("BAB")
+                .define('A', Blocks.MUD)
+                .define('B', ModBlocks.SMALL_MUD_BRICKS.get())
+                .unlockedBy("has_small_mud_bricks ", has(ModBlocks.SMALL_MUD_BRICKS.get()))
                 .save(pWriter);
         }
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

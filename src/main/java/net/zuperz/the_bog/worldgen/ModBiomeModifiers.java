@@ -19,11 +19,16 @@ import java.util.List;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_WEEPING_WILLOW = registerKey("add_tree_weeping_willow");
 
+    public static final ResourceKey<BiomeModifier> ADD_END_URANIUM_ORE  = registerKey("add_end_uranium_ore");
+
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-
+        context.register(ADD_END_URANIUM_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.END_URANIUM_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
 
     }
     private static ResourceKey<BiomeModifier> registerKey(String name) {

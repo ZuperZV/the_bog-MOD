@@ -19,7 +19,7 @@
 
         // The Identifier of the nbt file itself of the structure piece.
         // Note, this will automatically check into the 'structures' folder for the nbt file.
-        // The final path would look like 'resources/data/the_bog/structures/mud_spawn.nbt'
+        // The final path would look like 'resources/data/the_bog.json/structures/mud_spawn.nbt'
         // The Jigsaw block in the structure will point to side_pool.json to spawn the other half of the house.
         "location": "the_bog:mud_ruin",
 
@@ -45,7 +45,7 @@
 
         // The Identifier of the nbt file itself of the structure piece.
         // Note, this will automatically check into the 'structures' folder for the nbt file.
-        // The final path would look like 'resources/data/the_bog/structures/mud_spawn.nbt'
+        // The final path would look like 'resources/data/the_bog.json/structures/mud_spawn.nbt'
         // The Jigsaw block in the structure will point to side_pool.json to spawn the other half of the house.
         "location": "the_bog:mud_ruin_2",
 
@@ -71,7 +71,7 @@
 
         // The Identifier of the nbt file itself of the structure piece.
         // Note, this will automatically check into the 'structures' folder for the nbt file.
-        // The final path would look like 'resources/data/the_bog/structures/mud_spawn.nbt'
+        // The final path would look like 'resources/data/the_bog.json/structures/mud_spawn.nbt'
         // The Jigsaw block in the structure will point to side_pool.json to spawn the other half of the house.
         "location": "the_bog:mud_ruin_3",
 

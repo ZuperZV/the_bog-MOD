@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "titanium",
+  "key": {
+    "#": {
+      "item": "the_bog:raw_titanium"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "the_bog:raw_titanium_block"
+  },
+  "show_notification": true
+}

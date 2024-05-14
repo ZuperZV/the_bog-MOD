@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "uranium",
+  "ingredients": [
+    {
+      "item": "the_bog:uranium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "the_bog:uranium"
+  }
+}

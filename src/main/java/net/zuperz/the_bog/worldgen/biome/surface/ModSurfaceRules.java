@@ -10,7 +10,6 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
     private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
-    private static final SurfaceRules.RuleSource AMETHYST_BLOCK = makeStateRule(Blocks.AMETHYST_BLOCK);
     private static final SurfaceRules.RuleSource NETHERITE_BLOCK = makeStateRule(Blocks.NETHERITE_BLOCK);
 
     public static SurfaceRules.RuleSource makeRules() {

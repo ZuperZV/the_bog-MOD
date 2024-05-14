@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,11 +16,14 @@ import net.zuperz.the_bog.block.ModBlocks;
 import net.zuperz.the_bog.item.ModItems;
 import net.zuperz.the_bog.util.ModTags;
 import net.zuperz.the_bog.villager.ModVillagers;
+import net.minecraft.client.renderer.blockentity.BrushableBlockRenderer;
 
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = The_Bog.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvent {
+
+
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
         if(event.getType() == ModVillagers.PORTAL_MASTER.get()) {
@@ -355,7 +359,7 @@ public class ModEvent {
 
         if(event.getType() == ModVillagers.PORTAL_MASTER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModBlocks.THE_BOG_PORTAL.get(), 1);
+            ItemStack stack = new ItemStack(Blocks.MUD, 1);
 
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.RUBY.get(), 37),

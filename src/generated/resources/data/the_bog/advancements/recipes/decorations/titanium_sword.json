@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "the_bog:titanium_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titanium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_bog:titanium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_titanium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "the_bog:titanium_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

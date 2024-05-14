@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "bogganium_upgrade_smithing_template": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_bog:bogganium_upgrade_smithing_template"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "the_bog:bogganium_upgrade_smithing_template"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "bogganium_upgrade_smithing_template",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "the_bog:bogganium_upgrade_smithing_template"
+    ]
+  },
+  "sends_telemetry_event": false
+}

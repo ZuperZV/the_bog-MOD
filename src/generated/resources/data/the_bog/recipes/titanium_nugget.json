@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "titanium",
+  "ingredients": [
+    {
+      "item": "the_bog:titanium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "the_bog:titanium_nugget"
+  }
+}

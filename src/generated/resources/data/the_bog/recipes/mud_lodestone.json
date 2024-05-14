@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:lodestone"
+    },
+    "B": {
+      "item": "minecraft:mud"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BAB",
+    "BBB"
+  ],
+  "result": {
+    "item": "the_bog:mud_lodestone"
+  },
+  "show_notification": true
+}

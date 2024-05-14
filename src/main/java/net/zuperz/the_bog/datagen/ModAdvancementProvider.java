@@ -35,7 +35,6 @@ public class ModAdvancementProvider  implements ForgeAdvancementProvider.Advance
                         true, true, false))
                 .parent(Bismuth)
                 .save(saver, new ResourceLocation(Tool_Forge.MOD_ID, "bismuth_armor"), existingFileHelper);
-
          */
     }
 }

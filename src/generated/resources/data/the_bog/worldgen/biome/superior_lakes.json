@@ -6,7 +6,7 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.6,
+  "downfall": 0.2,
   "effects": {
     "fog_color": 12638463,
     "foliage_color": 3165484,
@@ -72,9 +72,9 @@
     "creature": [
       {
         "type": "minecraft:frog",
-        "maxCount": 5,
+        "maxCount": 3,
         "minCount": 2,
-        "weight": 3
+        "weight": 1
       }
     ],
     "misc": [],
@@ -83,7 +83,13 @@
         "type": "minecraft:slime",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 4
+        "weight": 2
+      },
+      {
+        "type": "the_bog:wet_slime",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
       }
     ],
     "underground_water_creature": [],

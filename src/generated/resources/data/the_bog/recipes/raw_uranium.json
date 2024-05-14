@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "uranium",
+  "key": {
+    "#": {
+      "item": "the_bog:raw_uranium"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "the_bog:raw_uranium_block"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "the_bog:lumina"
+    },
+    "B": {
+      "item": "minecraft:mud"
+    },
+    "C": {
+      "item": "the_bog:small_mud_bricks"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "BAB",
+    "CCC"
+  ],
+  "result": {
+    "item": "the_bog:small_lumina_mud_bricks_pillar"
+  },
+  "show_notification": true
+}

@@ -5,6 +5,7 @@
     "up": "the_bog:block/wet_slime_block_top",
     "side": "the_bog:block/wet_slime_block_side"
   },
+  "render_type": "translucent",
   "elements": [
     {   "from": [ 0, 0, 0 ],
       "to": [ 16, 16, 16 ],

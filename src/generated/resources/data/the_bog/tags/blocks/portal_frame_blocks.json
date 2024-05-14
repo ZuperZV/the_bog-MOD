@@ -1,5 +1,9 @@
 {
   "values": [
-    "the_bog:mud_stone"
+    "the_bog:mud_stone",
+    "the_bog:mud_stone_bricks",
+    "the_bog:andesite_mud_stone",
+    "the_bog:mud_stone",
+    "minecraft:mud"
   ]
 }

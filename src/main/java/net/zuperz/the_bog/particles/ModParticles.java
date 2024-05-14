@@ -15,6 +15,9 @@ public class ModParticles {
     public static final RegistryObject<SimpleParticleType> WETSLIME_PARTICLES =
             PARTICLE_TYPES.register("wetslime_particles", () -> new SimpleParticleType(true));
 
+    public static final RegistryObject<SimpleParticleType> BOG_PORTAL_PARTICLES =
+            PARTICLE_TYPES.register("bog_portal_particles", () -> new SimpleParticleType(true));
+
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
     }

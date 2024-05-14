@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "uranium",
+  "ingredient": {
+    "item": "the_bog:raw_uranium"
+  },
+  "result": "the_bog:uranium"
+}

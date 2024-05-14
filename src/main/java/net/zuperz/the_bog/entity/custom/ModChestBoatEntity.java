@@ -37,6 +37,9 @@ public class ModChestBoatEntity extends ChestBoat {
             case WEEPING_WILLOW -> {
                 return ModItems.WEEPING_WILLOW_CHEST_BOAT.get();
             }
+            case MIDNIGHT -> {
+                return ModItems.MIDNIGHT_CHEST_BOAT.get();
+            }
         }
         return super.getDropItem();
     }
@@ -48,6 +51,7 @@ public class ModChestBoatEntity extends ChestBoat {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_ID_TYPE, ModBoatEntity.Type.WEEPING_WILLOW.ordinal());
+        this.entityData.define(DATA_ID_TYPE, ModBoatEntity.Type.MIDNIGHT.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

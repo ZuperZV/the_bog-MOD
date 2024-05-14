@@ -62,6 +62,7 @@ public class BogEntity extends Monster {
     private static final Predicate<Difficulty> DOOR_BREAKING_PREDICATE = (p_34284_) -> {
         return p_34284_ == Difficulty.HARD;
     };
+
     private final BreakDoorGoal breakDoorGoal = new BreakDoorGoal(this, DOOR_BREAKING_PREDICATE);
     private boolean canBreakDoors;
 
@@ -71,6 +72,7 @@ public class BogEntity extends Monster {
 
 
     protected void registerGoals() {
+        this.goalSelector.addGoal(2, new BogeAttackGoal(this, 1.0D, false));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(2, new BogeAttackGoal(this, 1.0D, false));
@@ -142,6 +144,14 @@ public class BogEntity extends Monster {
     }
 
 
+    protected boolean convertsInWater() {
+        return true;
+    }
+
+
+    protected ItemStack getSkull() {
+        return ItemStack.EMPTY;
+    }
 
 
     /* VARIANT */

@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.zuperz.the_bog.block.ModBlocks;
 
 public class WetSlimeBlock extends HalfTransparentBlock {
     private static final double SLIDE_STARTS_WHEN_VERTICAL_SPEED_IS_AT_LEAST = 0.13D;
@@ -30,8 +31,8 @@ public class WetSlimeBlock extends HalfTransparentBlock {
     private static final int SLIDE_ADVANCEMENT_CHECK_INTERVAL = 20;
     protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
 
-    public WetSlimeBlock(BlockBehaviour.Properties pProperties) {
-        super(pProperties);
+    public WetSlimeBlock(BlockBehaviour.Properties properties) {
+        super(properties);
     }
 
     private static boolean doesEntityDoHoneyBlockSlideEffects(Entity pEntity) {
@@ -47,11 +48,6 @@ public class WetSlimeBlock extends HalfTransparentBlock {
         if (!pLevel.isClientSide) {
             pLevel.broadcastEntityEvent(pEntity, (byte)54);
         }
-
-        /*if (pEntity.causeFallDamage(pFallDistance, 0.2F, pLevel.damageSources().fall())) {
-            pEntity.playSound(this.soundType.getFallSound(), this.soundType.getVolume() * 0.5F, this.soundType.getPitch() * 0.75F);
-        }*/
-
         if (pEntity.isSuppressingBounce()) {
             super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
         } else {
@@ -115,21 +111,6 @@ public class WetSlimeBlock extends HalfTransparentBlock {
             }
         }
 
-    }
-
-    public static void showSlideParticles(Entity pEntity) {
-        showParticles(pEntity, 5);
-    }
-
-    private static void showParticles(Entity pEntity, int pParticleCount) {
-        if (pEntity.level().isClientSide) {
-            BlockState blockstate = Blocks.HONEY_BLOCK.defaultBlockState();
-
-            for(int i = 0; i < pParticleCount; ++i) {
-                pEntity.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, blockstate), pEntity.getX(), pEntity.getY(), pEntity.getZ(), 0.0D, 0.0D, 0.0D);
-            }
-
-        }
     }
 
 

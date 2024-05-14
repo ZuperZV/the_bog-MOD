@@ -6,4 +6,6 @@ import net.zuperz.the_bog.The_Bog;
 
 public class ModWoodTypes {
     public static final WoodType WEEPING_WILLOW = WoodType.register(new WoodType(The_Bog.MOD_ID + ":weeping_willow", BlockSetType.OAK));
+
+    public static final WoodType MIDNIGHT = WoodType.register(new WoodType(The_Bog.MOD_ID + ":midnight", BlockSetType.OAK));
 }

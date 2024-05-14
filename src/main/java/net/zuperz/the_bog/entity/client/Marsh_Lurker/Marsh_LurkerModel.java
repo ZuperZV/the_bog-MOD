@@ -5,24 +5,19 @@ package net.zuperz.the_bog.entity.client.Marsh_Lurker;
 // Paste this class into your mod and generate all required imports
 
 
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 import net.zuperz.the_bog.entity.animations.ModAnimationDefinitions;
-import net.zuperz.the_bog.entity.custom.DuckEntity;
-import net.zuperz.the_bog.entity.custom.Marsh_LurkerEntity;
+import net.zuperz.the_bog.entity.custom.MarshLurkerEntity;
 
-public class Marsh_LurkerModel<T extends Marsh_LurkerEntity> extends HierarchicalModel<T> {
+public class Marsh_LurkerModel<T extends MarshLurkerEntity> extends HierarchicalModel<T> {
 	private final ModelPart Marsh_Lurker;
 	private final ModelPart head;
 
@@ -78,7 +73,7 @@ public class Marsh_LurkerModel<T extends Marsh_LurkerEntity> extends Hierarchica
 	}
 
 	@Override
-	public void setupAnim(Marsh_LurkerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(MarshLurkerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(entity, netHeadYaw, headPitch, ageInTicks);
 
@@ -87,7 +82,7 @@ public class Marsh_LurkerModel<T extends Marsh_LurkerEntity> extends Hierarchica
 		this.animate(entity.attackAnimationState, ModAnimationDefinitions.ATTACK_MARSH_LURKER, ageInTicks, 1f);
 	}
 
-	private void applyHeadRotation(Marsh_LurkerEntity pEntity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
+	private void applyHeadRotation(MarshLurkerEntity pEntity, float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
 		pNetHeadYaw = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
 		pHeadPitch = Mth.clamp(pHeadPitch, -25.0F, 45.0F);
 

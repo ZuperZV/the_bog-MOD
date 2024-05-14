@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:mud"
+    },
+    "B": {
+      "item": "minecraft:mud_bricks"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "BAB",
+    "BAB"
+  ],
+  "result": {
+    "item": "the_bog:reinforced_mud"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "uranium",
+  "ingredient": {
+    "item": "the_bog:deepslate_uranium_ore"
+  },
+  "result": "the_bog:uranium"
+}

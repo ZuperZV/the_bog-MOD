@@ -15,7 +15,7 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    BOGGANIUM("bogganium", 37, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+    BOGGANIUM("bogganium", 36, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 4);
         p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 9);
@@ -41,8 +41,21 @@ public enum ModArmorMaterials implements ArmorMaterial {
         p_266654_.put(ArmorItem.Type.LEGGINGS, 6);
         p_266654_.put(ArmorItem.Type.CHESTPLATE, 8);
         p_266654_.put(ArmorItem.Type.HELMET, 3);
-    }), 18, SoundEvents.ARMOR_EQUIP_IRON, 0.2F, 0.1F, () -> Ingredient.of(ModTags.Items.SILVER_DIAMOND));
+    }), 18, SoundEvents.ARMOR_EQUIP_IRON, 0.2F, 0.1F, () -> Ingredient.of(ModTags.Items.SILVER_DIAMOND)),
 
+    URANIUM("uranium", 50, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.BOOTS, 4);
+        p_266655_.put(ArmorItem.Type.LEGGINGS, 6);
+        p_266655_.put(ArmorItem.Type.CHESTPLATE, 10);
+        p_266655_.put(ArmorItem.Type.HELMET, 3);
+    }), 13, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.15F, () -> Ingredient.of(ModItems.URANIUM.get())),
+
+    TITANIUM("titanium", 13, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.BOOTS, 2);
+        p_266655_.put(ArmorItem.Type.LEGGINGS, 4);
+        p_266655_.put(ArmorItem.Type.CHESTPLATE, 5);
+        p_266655_.put(ArmorItem.Type.HELMET, 2);
+    }), 13, SoundEvents.ARMOR_EQUIP_IRON, 3.0F, 0.15F, () -> Ingredient.of(ModItems.TITANIUM.get()));
 
     public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {

@@ -1,6 +1,7 @@
 package net.zuperz.the_bog.datagen;
 
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import net.zuperz.the_bog.The_Bog;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -52,7 +53,17 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.SILVER_DIAMOND_HELMET.get())
                 .add(ModItems.SILVER_DIAMOND_CHESTPLATE.get())
                 .add(ModItems.SILVER_DIAMOND_LEGGINGS.get())
-                .add(ModItems.SILVER_DIAMOND_BOOTS.get());
+                .add(ModItems.SILVER_DIAMOND_BOOTS.get())
+
+                .add(ModItems.URANIUM_HELMET.get())
+                .add(ModItems.URANIUM_CHESTPLATE.get())
+                .add(ModItems.URANIUM_LEGGINGS.get())
+                .add(ModItems.URANIUM_BOOTS.get())
+
+                .add(ModItems.TITANIUM_HELMET.get())
+                .add(ModItems.TITANIUM_CHESTPLATE.get())
+                .add(ModItems.TITANIUM_LEGGINGS.get())
+                .add(ModItems.TITANIUM_BOOTS.get());
 
         this.tag(ModTags.Items.BOG_LEATHER)
                 .add(ModItems.BOGSKIN.get())
@@ -67,6 +78,12 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.MOSSY_MUD_STONE_BRICKS.get().asItem())
                 .add(ModBlocks.MUD_STONE_BRICKS.get().asItem())
                 .add(ModBlocks.ANDESITE_MUD_STONE.get().asItem());
+
+        copy(ModTags.Blocks.ORES_SILVER, ModTags.Items.ORES_SILVER);
+
+        copy(ModTags.Blocks.ORES_URANIUM, ModTags.Items.ORES_URANIUM);
+
+        copy(ModTags.Blocks.ORES_TITANIUM, ModTags.Items.ORES_TITANIUM);
     }
 
     @Override

@@ -32,7 +32,9 @@
       "minecraft:amethyst_geode",
       "the_bog:bog_grass_placed",
       "the_bog:bog_flower_placed",
-      "the_bog:silver_ore_placed"
+      "the_bog:stick_grass_placed",
+      "the_bog:silver_ore_placed",
+      "the_bog:titanium_ore_placed"
     ],
     [
       "minecraft:monster_room",
@@ -68,15 +70,14 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "the_bog:weeping_willow_placed",
+      "the_bog:stick_grass_placed",
       "the_bog:bog_weeping_willow_placed",
       "minecraft:flower_swamp",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
-      "minecraft:red_mushroom_swamp",
-      "minecraft:seagrass_swamp",
-      "minecraft:kelp_cold"
+      "minecraft:red_mushroom_swamp"
     ]
   ],
   "has_precipitation": true,
@@ -87,9 +88,9 @@
     "creature": [
       {
         "type": "minecraft:frog",
-        "maxCount": 5,
+        "maxCount": 3,
         "minCount": 2,
-        "weight": 3
+        "weight": 1
       },
       {
         "type": "the_bog:duck",
@@ -104,13 +105,7 @@
         "type": "minecraft:slime",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 4
-      },
-      {
-        "type": "the_bog:marsh_lurker",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 6
+        "weight": 2
       }
     ],
     "underground_water_creature": [],

@@ -26,10 +26,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.BOGE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.WET_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+        withExistingParent(ModItems.DARK_SKELETON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         simpleItem(ModItems.DUCK_FEATHER);
         simpleItem(ModItems.DUCK_EGG);
         simpleItem(ModItems.RAW_DUCK);
         simpleItem(ModItems.COOKED_DUCK);
+
+        simpleItem(ModItems.MUD_STONE_AND_STEEL);
+
+        simpleItem(ModItems.SILVER_HORSE_ARMOR);
+        simpleItem(ModItems.SILVER_DIAMOND_HORSE_ARMOR);
+        simpleItem(ModItems.BOGWALKER_HORSE_ARMOR);
+        simpleItem(ModItems.BOGGANIUM_HORSE_ARMOR);
 
         simpleItem(ModItems.HOME_STONE_SHARD);
         simpleItem(ModItems.WET_SLIME_BALL);
@@ -41,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleBlockItem(ModBlocks.MISTVEIL_BLOSSOM);
         simpleBlockItem(ModBlocks.BOG_GRASS);
+        simpleBlockItem(ModBlocks.STICK_GRASS);
 
         saplingItem(ModBlocks.WEEPING_WILLOW_SAPLING);
 
@@ -62,9 +72,22 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SILVER);
         simpleItem(ModItems.RAW_SILVER);
 
+        simpleItem(ModItems.SILVER);
+        simpleItem(ModItems.RAW_SILVER);
+
+        simpleItem(ModItems.URANIUM);
+        simpleItem(ModItems.RAW_URANIUM);
+
+        simpleItem(ModItems.TITANIUM);
+        simpleItem(ModItems.RAW_TITANIUM);
+        simpleItem(ModItems.TITANIUM_NUGGET);
+
         simpleItem(ModItems.SLIMY_PIECE_OF_SKIN);
         simpleItem(ModItems.COOKED_MARSH_LURKER_FLESH);
         simpleItem(ModItems.MARSH_LURKER_FLESH);
+
+        simpleItem(ModItems.DARK_BONE);
+        handheldItem(ModItems.DARK_BONE_SWORD);
 
         handheldItem(ModItems.MUDSTONE_SWORD);
         handheldItem(ModItems.MUDSTONE_PICKAXE);
@@ -94,12 +117,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.BOGGANIUM_HOE);
         handheldItem(ModItems.BOGGANIUM_PAXEL);
 
+        handheldItem(ModItems.URANIUM_SWORD);
+        handheldItem(ModItems.URANIUM_PICKAXE);
+        handheldItem(ModItems.URANIUM_AXE);
+        handheldItem(ModItems.URANIUM_SHOVEL);
+        handheldItem(ModItems.URANIUM_HOE);
+
+        handheldItem(ModItems.TITANIUM_SWORD);
+        handheldItem(ModItems.TITANIUM_PICKAXE);
+        handheldItem(ModItems.TITANIUM_AXE);
+        handheldItem(ModItems.TITANIUM_SHOVEL);
+        handheldItem(ModItems.TITANIUM_HOE);
+
         handheldItem(ModItems.DIAMOND_PAXEL);
 
         simpleItem(ModItems.BOGGANIUM_WATER_BUCKET);
 
         simpleItem(ModItems.BOGGY_CHOPS);
         simpleItem(ModItems.COOKED_BOGGY_CHOPS);
+
+        wallItem(ModBlocks.SMALL_MUD_BRICKS_WALL, ModBlocks.SMALL_MUD_BRICKS);
     }
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

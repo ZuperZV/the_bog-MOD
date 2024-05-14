@@ -1,11 +1,14 @@
-// 1.20.1	2024-03-05T15:01:01.6204078	Block Tags
+// 1.20.1	2024-05-14T20:27:09.4071027	Block Tags
 8309cd3cd1dc62359cbaa72dc83bc7d29ffbdfdb data/minecraft/tags/blocks/fences.json
 155f5ef35c895b8c1593952d18ba5857e1248b3e data/minecraft/tags/blocks/fence_gates.json
 27ddba9685755a996b8dcb5ef78727d7591b2e94 data/minecraft/tags/blocks/logs_that_burn.json
-618d2cb4d20496f9dca6af4ae1b76aba3c8ad245 data/minecraft/tags/blocks/mineable/axe.json
-fb481fdc124c36b42703a2df401b2aa0111cd79d data/minecraft/tags/blocks/mineable/pickaxe.json
+585d40a4e170b50114363cfc4535ba77f5b41cf1 data/minecraft/tags/blocks/mineable/axe.json
+f9d05ef83ec4426aaaec28cef22ccbbb7cbf5f1a data/minecraft/tags/blocks/mineable/pickaxe.json
 72c920ccc998566f0f04ec83fa3629ef1cb553a5 data/minecraft/tags/blocks/planks.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/the_bog/tags/blocks/blacklist_portal_frame_blocks.json
+918c022d3e83d5b28b1cf52f9ebbc194cd1d3a19 data/minecraft/tags/blocks/walls.json
 8de89de6c432337581fa7b3341427a8cb8150778 data/the_bog/tags/blocks/bog_dirt.json
 64ba52a0503fe733de3f3907b7f157cb0821a8e3 data/the_bog/tags/blocks/mineable/paxel.json
-321b39c1f48ea04f6cf7a6717db88c49660a515c data/the_bog/tags/blocks/portal_frame_blocks.json
+b6f40dca7fed8c5222c68b5aa9d2b08e1de9e6b2 data/the_bog/tags/blocks/ores/silver.json
+c9bddfeb4839ed885b81e38472c8f333e5108d33 data/the_bog/tags/blocks/ores/titanium.json
+e3e564ae73de15fdf039083aaf2baa4a413c3520 data/the_bog/tags/blocks/ores/uranium.json
+dbc54cd820936f4e6c4eeee4a9f7267a24ee4346 data/the_bog/tags/blocks/portal_frame_blocks.json

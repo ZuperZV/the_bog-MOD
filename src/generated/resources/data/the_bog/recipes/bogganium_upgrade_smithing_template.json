@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "the_bog:bogganium_upgrade_smithing_template"
+    },
+    "B": {
+      "item": "the_bog:mud_stone"
+    },
+    "C": {
+      "item": "the_bog:titanium"
+    }
+  },
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "result": {
+    "item": "the_bog:bogganium_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

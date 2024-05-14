@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "the_bog:titanium"
+    }
+  },
+  "pattern": [
+    " B",
+    " A",
+    " A"
+  ],
+  "result": {
+    "item": "the_bog:titanium_shovel"
+  },
+  "show_notification": true
+}

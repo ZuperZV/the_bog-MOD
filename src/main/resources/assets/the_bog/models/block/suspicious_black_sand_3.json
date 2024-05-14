@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "the_bog:block/suspicious_black_sand_3"
+  }
+}

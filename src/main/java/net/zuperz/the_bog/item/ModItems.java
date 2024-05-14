@@ -1,6 +1,7 @@
 package net.zuperz.the_bog.item;
 
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -19,6 +20,14 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, The_Bog.MOD_ID);
 
+    public static final RegistryObject<Item> MUD_STONE_AND_STEEL = ITEMS.register("mud_stone_and_steel",
+            () -> new ThebogItem());
+
+    public static final RegistryObject<Item> DARK_BONE = ITEMS.register("dark_bone",
+            () -> new Item((new Item.Properties()).fireResistant()));
+
+    public static final RegistryObject<Item> DARK_BONE_SWORD = ITEMS.register("dark_bone_sword",
+            () -> new DarkSkeletonSwordItem(ModToolTiers.DARK_BONE_TOOL, 3, -2.4F, new Item.Properties().fireResistant().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> DUCK_SPAWN_EGG = ITEMS.register("duck_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DUCK, 0x544124, 0xecd8ba,
@@ -38,6 +47,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> WET_SLIME_SPAWN_EGG = ITEMS.register("wet_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.WET_SLIME, 0x82d4d7, 0x6dbbbe,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> DARK_SKELETON_SPAWN_EGG = ITEMS.register("dark_skeleton_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DARK_SKELETON, 0x3c3c3c, 0x212121,
                     new Item.Properties()));
 
     public static final RegistryObject<Item> WET_SLIME_BALL = ITEMS.register("wet_slime_ball",
@@ -76,6 +89,21 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> URANIUM = ITEMS.register("uranium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_URANIUM = ITEMS.register("raw_uranium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM = ITEMS.register("titanium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> SLIMY_PIECE_OF_SKIN = ITEMS.register("slimy_piece_of_skin",
             () -> new Item(new Item.Properties()));
 
@@ -92,11 +120,27 @@ public class ModItems {
     public static final RegistryObject<Item> WEEPING_WILLOW_CHEST_BOAT = ITEMS.register("weeping_willow_chest_boat",
             () -> new ModBoatItem(true, ModBoatEntity.Type.WEEPING_WILLOW, new Item.Properties()));
 
+
+    public static final RegistryObject<Item> MIDNIGHT_SIGN = ITEMS.register("midnight_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.MIDNIGHT_SIGN.get(), ModBlocks.MIDNIGHT_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> MIDNIGHT_HANGING_SIGN = ITEMS.register("midnight_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.MIDNIGHT_HANGING_SIGN.get(), ModBlocks.MIDNIGHT_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> MIDNIGHT_BOAT = ITEMS.register("midnight_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.MIDNIGHT, new Item.Properties()));
+
+    public static final RegistryObject<Item> MIDNIGHT_CHEST_BOAT = ITEMS.register("midnight_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.MIDNIGHT, new Item.Properties()));
+
+
+
     public static final RegistryObject<Item> BOGBLOSSOM_BOW = ITEMS.register("bogblossom_bow",
-            () -> new BowItem(new Item.Properties().durability(650)));
+            () -> new ModBowItem(new Item.Properties().durability(650)));
 
     public static final RegistryObject<Item> DIAMOND_BOGBLOSSOM_BOW = ITEMS.register("diamond_bogblossom_bow",
-            () -> new BowItem(new Item.Properties().durability(2650)));
+            () -> new ModDiamondBowItem(new Item.Properties().durability(2650)));
 
     public static final RegistryObject<Item> BOGGANIUM_INGOT = ITEMS.register("bogganium_ingot",
             () -> new Item(new Item.Properties()));
@@ -116,6 +160,27 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",
+            () -> new ArmorItem(ModArmorMaterials.TITANIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_CHESTPLATE = ITEMS.register("titanium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.TITANIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_LEGGINGS = ITEMS.register("titanium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.TITANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots",
+            () -> new ArmorItem(ModArmorMaterials.TITANIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> TITANIUM_SWORD = ITEMS.register("titanium_sword",
+            () -> new SwordItem(ModToolTiers.TITANIUM_TOOL, 3, -2.4F, new Item.Properties().durability(2856)));
+    public static final RegistryObject<Item> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.TITANIUM_TOOL, 1, -2.8F, new Item.Properties().durability(2856)));
+    public static final RegistryObject<Item> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel",
+            () -> new ShovelItem(ModToolTiers.TITANIUM_TOOL, 1.5F, -3.0F, new Item.Properties().durability(2856)));
+    public static final RegistryObject<Item> TITANIUM_AXE = ITEMS.register("titanium_axe",
+            () -> new AxeItem(ModToolTiers.TITANIUM_TOOL, 5.0F, -3.0F, new Item.Properties().durability(2856)));
+    public static final RegistryObject<Item> TITANIUM_HOE = ITEMS.register("titanium_hoe",
+            () -> new HoeItem(ModToolTiers.TITANIUM_TOOL, -4, 0.0F, new Item.Properties().durability(2856)));
+
+
     public static final RegistryObject<Item> BOGGANIUM_HELMET = ITEMS.register("bogganium_helmet",
             () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BOGGANIUM_CHESTPLATE = ITEMS.register("bogganium_chestplate",
@@ -124,6 +189,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BOGGANIUM_BOOTS = ITEMS.register("bogganium_boots",
             () -> new ArmorItem(ModArmorMaterials.BOGGANIUM, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> BOGGANIUM_HORSE_ARMOR = ITEMS.register("bogganium_horse_armor",
+            () -> new HorseArmorItem(13, new ResourceLocation(The_Bog.MOD_ID, "textures/entity/horse/armor/horse_armor_bogganium.png"), new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> BOGWALKER_HELMET = ITEMS.register("bogwalker_helmet",
             () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -134,6 +202,18 @@ public class ModItems {
     public static final RegistryObject<Item> BOGWALKER_BOOTS = ITEMS.register("bogwalker_boots",
             () -> new ArmorItem(ModArmorMaterials.BOGWALKER, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> BOGWALKER_HORSE_ARMOR = ITEMS.register("bogwalker_horse_armor",
+            () -> new HorseArmorItem(6, new ResourceLocation(The_Bog.MOD_ID, "textures/entity/horse/armor/horse_armor_bogwalker.png"), new Item.Properties()));
+
+    public static final RegistryObject<Item> URANIUM_HELMET = ITEMS.register("uranium_helmet",
+            () -> new ArmorItem(ModArmorMaterials.URANIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> URANIUM_CHESTPLATE = ITEMS.register("uranium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.URANIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> URANIUM_LEGGINGS = ITEMS.register("uranium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.URANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> URANIUM_BOOTS = ITEMS.register("uranium_boots",
+            () -> new ArmorItem(ModArmorMaterials.URANIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
     public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet",
             () -> new ArmorItem(ModArmorMaterials.SILVER, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate",
@@ -143,6 +223,9 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
             () -> new ArmorItem(ModArmorMaterials.SILVER, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> SILVER_HORSE_ARMOR = ITEMS.register("silver_horse_armor",
+            () -> new HorseArmorItem(8, new ResourceLocation(The_Bog.MOD_ID, "textures/entity/horse/armor/horse_armor_silver.png"), new Item.Properties()));
+
     public static final RegistryObject<Item> SILVER_DIAMOND_HELMET = ITEMS.register("silver_diamond_helmet",
             () -> new ArmorItem(ModArmorMaterials.SILVER_DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_DIAMOND_CHESTPLATE = ITEMS.register("silver_diamond_chestplate",
@@ -151,6 +234,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.SILVER_DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_DIAMOND_BOOTS = ITEMS.register("silver_diamond_boots",
             () -> new ArmorItem(ModArmorMaterials.SILVER_DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> SILVER_DIAMOND_HORSE_ARMOR = ITEMS.register("silver_diamond_horse_armor",
+            () -> new HorseArmorItem(11, new ResourceLocation(The_Bog.MOD_ID, "textures/entity/horse/armor/horse_armor_silver_diamond.png"), new Item.Properties()));
 
     public static final RegistryObject<Item> SILVER_DIAMOND_SWORD = ITEMS.register("silver_diamond_sword",
             () -> new SwordItem(ModToolTiers.SILVER_DIAMOND_TOOL, 3, -2.4F, new Item.Properties().durability(2856)));
@@ -166,6 +252,16 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_DIAMOND_PAXEL = ITEMS.register("silver_diamond_paxel",
             () -> new PaxelItem(ModToolTiers.SILVER_DIAMOND_TOOL, 2, 3, new Item.Properties().durability(2856)));
 
+    public static final RegistryObject<Item> URANIUM_SWORD = ITEMS.register("uranium_sword",
+            () -> new SwordItem(ModToolTiers.URANIUM_TOOL, 3, -2.4F, new Item.Properties().durability(3000)));
+    public static final RegistryObject<Item> URANIUM_PICKAXE = ITEMS.register("uranium_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.URANIUM_TOOL, 1, -2.8F, new Item.Properties().durability(3000)));
+    public static final RegistryObject<Item> URANIUM_SHOVEL = ITEMS.register("uranium_shovel",
+            () -> new ShovelItem(ModToolTiers.URANIUM_TOOL, 1.5F, -3.0F, new Item.Properties().durability(3000)));
+    public static final RegistryObject<Item> URANIUM_AXE = ITEMS.register("uranium_axe",
+            () -> new AxeItem(ModToolTiers.URANIUM_TOOL, 5.0F, -3.0F, new Item.Properties().durability(3000)));
+    public static final RegistryObject<Item> URANIUM_HOE = ITEMS.register("uranium_hoe",
+            () -> new HoeItem(ModToolTiers.URANIUM_TOOL, -4, 0.0F, new Item.Properties().durability(3000)));
 
     public static final RegistryObject<Item> BOGGANIUM_SWORD = ITEMS.register("bogganium_sword",
             () -> new SwordItem(ModToolTiers.BOGGANIUM_TOOL, 3, -2.4F, new Item.Properties().durability(3256)));
